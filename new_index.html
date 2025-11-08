@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Yiheng Wang Homepage">
+  <meta name="author" content="Yiheng Wang">
+  <link rel="icon" href="files/icon.svg">
+
+  <title>Yiheng Wang</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+  <!-- Custom styles for this template (your file). -->
+  <link href="css/narrow-jumbotron.css" rel="stylesheet">
+
+  <!-- Inline extra tweaks -->
+  <style>
+    /* 去掉默认 ul 样式，用自定义点 */
+    ul { list-style-type: none; padding-left: 0; }
+    li:before { content: "•"; margin-right: 8px; }
+
+    /* 语言按钮样式（固定在右上角） */
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+
+    /* 简单的项目卡片样式微调 */
+    .project-card { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
+    .project-thumb { width: 40%; max-width: 300px; }
+    .project-info { flex: 1; }
+    @media (max-width: 767px) {
+      .project-card { flex-direction: column; }
+      .project-thumb { width: 100%; max-width: none; }
+    }
+  </style>
+
+  <!-- Google Analytics (保留原有配置) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111714927-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111714927-1');
+  </script>
+</head>
+
+<body>
+  <!-- 语言切换按钮（固定右上角） -->
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+
+    <main role="main">
+
+      <!-- 关于 / About -->
+      <div id="about" class="row marketing" style="margin-top:2rem;">
+        <div class="col-lg-5 mt-5">
+          <figure class="figure">
+            <!-- 图片路径保持你现有 files/ 下的文件 -->
+            <img width="120%" src="assets/personal/photo.png" align="right" class="figure-img img-fluid rounded" alt="Me.">
+          </figure>
+        </div>
+
+        <div class="col-lg-6 mt-5 offset-lg-1">
+          <div class="row marketing" style="margin-top:0">
+            <!-- 使用 data-en 和 data-zh 存放双语文本 -->
+            <h2 data-en="Yiheng Wang" data-zh="汪伊恒">Yiheng Wang</h2>
+          </div>
+
+          <div class="row marketing">
+            <p data-en="😀 Welcome to my homepage. Hello!"
+               data-zh="😀 欢迎来到我的主页！">😀 Welcome to my homepage. Hello!</p>
+
+            <p data-en="🧑‍🎓 I'm a first-year Electrical and Computer Engineering MS student at Duke University (NC, USA). Before that, I obtained a B.Eng. degree in Intelligent Manufacturing Engineering from Tongji University (Shanghai, China). I was awarded Outstanding Graduate of Shanghai in 2025. I have broad interests in machine learning, computer vision, and large multimodal models."
+               data-zh="🧑‍🎓 我是杜克大学（Duke University）电气与计算机工程硕士一年级学生。此前在同济大学获得智能制造工程本科学位。我在2025年被评为“上海市优秀毕业生”。我的兴趣广泛，涵盖机器学习、计算机视觉与大型多模态模型。">
+              🧑‍🎓 I'm a first-year Electrical and Computer Engineering MS student at the Duke University, NC, US.
+            </p>
+          </div>
+
+          <div class="row marketing">
+            <p>
+              <!-- 邮件地址与外链不在 data- 属性里，保持原样，但标签说明可翻译 -->
+              <span data-en="📪 Contact:" data-zh="📪 联系方式">📪 联系方式:</span>
+              <a href="mailto:2153839wyh@gmail.com">2153839wyh@gmail.com</a>
+              <a href="mailto:yiheng.wang@duke.edu" style="margin-left:6px;">yiheng.wang@duke.edu</a>
+              <br>
+              <!-- 链接文本也提供翻译；外链在新标签打开 -->
+              [<a href="https://github.com/yiheng-wang-duke" target="_blank" rel="noopener" data-en="Github" data-zh="Github">Github</a>]
+              [<a href="https://www.linkedin.com/in/yiheng-wang-98b169353" target="_blank" rel="noopener" data-en="LinkedIn" data-zh="领英">LinkedIn</a>]
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- News / 最新动态 -->
+      <div id="News" class="row marketing">
+        <div class="row" style="width:100%">
+          <div class="col-lg-12">
+            <h4 data-en="🚀 News" data-zh="🚀 最新动态">🚀 News</h4>
+            <hr>
+          </div>
+        </div>
+
+        <ul>
+          <li data-en="(2025/10) I'm working on deep learning algorithm to translate brain signals into text. Currently rank in the <strong> Brain-to-Text25 kaggle competition:7/131 </strong>"
+              data-zh="(2025/10) 我正在搭建 AI 算法提高脑信号→文本的转换性能。目前 <strong> Brain-to-Text25 kaggle 比赛排名：7/131" </strong>>
+          </li>
+          <li data-en="(2025/10) I'm working with Prof. Yiran Chen, Yueqian Lin, and Yudong Liu, to conduct research in multimodal language models and video understanding."
+              data-zh="(2025/10) 我进入了 Yiran Chen 教授的实验室，和林阅千、刘裕东博士一起，进行多模态大模型与视频理解的研究。">
+            (2025/10) I'm working with Prof. Yiran Chen, Yueqian Lin,and Yudong Liu, to conduct research in multimodal langage models and video understanding.
+          </li>
+          <li data-en="(2025/08-now) I'm pursuing <strong> M.S. in Electrical and Computer Engineering at Duke University, US</strong>. Welcome to contact me!"
+              data-zh="(2025/08) 我在 <strong>杜克大学 </strong>攻读 <strong>电气与计算机工程硕士学位 </strong>。欢迎联系我！">
+            (2025/08-now) I'm pursuing M.S. in Electrical and Computer Engineering at Duke Univerisity, US. Welcome to contact me!
+          </li>
+          <li data-en="(2025/03) I served as <strong> Machine Learning Engineer Assistant Intern at TeleAI</strong>. I'm working with Dr. Xiangyu Chen to build an agent with food recognition and nutrition analysis capability for AI glasses."
+              data-zh="(2025/03) 我在 <strong> 中国电信人工智能研究院 </strong>担任 <strong>多模态大模型实习生 </strong>，在陈祥宇博士带领下为可穿戴 AI 眼镜构建具备食物识别与营养分析能力的智能 Agent。">
+            (2025/03) I served as <strong>Machine Learning Engineer Assistant Intern</strong> at TeleAI. I'm working with Dr. Xiangyu Chen [<a href="https://chxy95.github.io/" target="_blank" rel="noopener">Homepage</a>] to build an agent with food recoginition and nutrition analysis capability for wearable AI glasses.
+          </li>
+
+          <li data-en="(2024/07) I served as <strong> Research Assistant Intern</strong> at Shanghai Aopeng Interactive Information Technology Co., working with Prof. Shawn Shen on video-memory agents."
+              data-zh="(2024/07) 我在上海奥鹏信息技术有限公司担任研究助理实习生，与沈俊潇教授合作，开发具备长视频记忆能力的视频理解 Agent。">
+            (2024/07) I served as <strong>Research Assistant Intern</strong> at Shanghai Aopeng Interactive Information Technology Co. I'm working with Prof. Shawn Shen [<a href="https://shawnshenjx.github.io/" target="_blank" rel="noopener">Homepage</a>] to build an agent with memory capability over long video contexts.
+          </li>
+
+          <li data-en="(2024/06) Our work <strong>TDA-Track</strong> at V4R lab, Tongji University, was accepted by <strong>IROS 2024</strong>!"
+              data-zh="(2024/06) 在同济大学 V4R 实验室的工作 <strong>TDA-Track 被 IROS 2024 接收！</strong>">
+            (2024/06) Our work <strong>TDA-Track</strong> has been accepted by <strong>IROS 2024</strong>!
+            [<a href="https://arxiv.org/pdf/2409.18533" target="_blank" rel="noopener">Paper</a>]
+            [<a href="https://github.com/vision4robotics/TDA-Track" target="_blank" rel="noopener">Code</a>].
+          </li>
+
+          <li data-en="(2024/06) Our work <strong>LDEnhancer</strong> at V4R lab, Tongji University, was accepted by <strong>IROS 2024</strong>!"
+              data-zh="(2024/06) 在同济大学 V4R 实验室的工作 <strong>LDEnhancer被 IROS 2024 接收</strong>">
+            (2024/06) Our work <strong>LDEnhancer</strong> has been accepted by <strong>IROS 2024</strong>!
+            [<a href="https://arxiv.org/pdf/2409.16631" target="_blank" rel="noopener">Paper</a>]
+            [<a href="https://github.com/vision4robotics/LDEnhancer" target="_blank" rel="noopener">Code</a>].
+          </li>
+        </ul>
+      </div>
+
+      <section id="Projects" class="row marketing" aria-labelledby="projects-heading">
+        <div class="row" style="width:100%">
+          <div class="col-lg-12">
+            <h4 id="projects-heading" data-en="📁 Projects" data-zh="📁 项目">📁 Projects</h4>
+            <hr>
+          </div>
+        </div>
+      
+        <!-- 内部导航：Quick links -->
+        <div class="row mb-3">
+          <div class="col-lg-12">
+            <div class="btn-group" role="group" aria-label="project sections" style="margin-bottom:0.5rem;">
+              <a class="btn btn-sm btn-outline-secondary" href="#proj-agent" data-en="Intelligent Agent" data-zh="智能 Agent">Intelligent Agent</a>
+              <a class="btn btn-sm btn-outline-secondary" href="#proj-longvideo" data-en="Long-Video Understanding" data-zh="长视频理解">Long-Video Understanding</a>
+              <a class="btn btn-sm btn-outline-secondary" href="#proj-nightuav" data-en="Nighttime UAV Tracking" data-zh="黑夜无人机目标跟踪">Nighttime UAV Tracking</a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- -------------------- 智能 Agent -------------------- -->
+        <section id="proj-agent" class="mb-4" aria-labelledby="proj-agent-heading">
+          <h5 id="proj-agent-heading" data-en="🤖 Intelligent Agent" data-zh="🤖 智能 Agent">🤖 Intelligent Agent</h5>
+          <p data-en="I have strong interest in building intelligent agents with large language models or large multimodal models.
+                      Previously, I had project expreience in building a food recognition and nutrition analysis agent during my internship at TeleAI.
+                      And I also contributed to the construction of agentic benchmark TeleEgo to evaluate large multimodal models for egocentric long-term video question answering performance."
+             data-zh="我对基于大型语言模型（LLM）或大型多模态模型（LMM）构建智能体（Intelligent Agents）有着浓厚的兴趣。
+                      此前，在 TeleAI 实习期间，我参与了食物识别与营养分析智能体的项目核心开发。
+                      我还参与了 TeleEgo 基准的建设，用于评估大型多模态模型在第一视角长时视频问答任务中的表现。">
+            Projects focused on building multimodal agents (eg. wearable AI, nutrition agents).
+          </p>
+      
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/teleai/teleglass.html" target="_blank" rel="noopener">
+                <img src="assets/teleai/teleglass.jpg" alt="Food Recognition and Nutrition Analysis Agent" class="img-thumbnail" style="width:100%; max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h5>
+                <a href="assets/teleai/teleglass.html" target="_blank" rel="noopener"
+                   data-en="Food Recognition & Nutrition Estimation Agent for Wearable AI glasses"
+                   data-zh="食物识别与营养估算Agent">
+                </a>
+              </h5>
+              <p 
+                data-en="I served as the core data engineer and algorithm developer. 
+                        I collected large-scale food-related data from Baidu and official nutrition databases, and built a complete data preprocessing pipeline, including image quality filtering, object detection, cropping, and deduplication. 
+                        In addition, I prepared fine-tuning datasets and fine-tuned the TeleMM-7B model for food recognition and nutrition estimation, improving recognition accuracy from 74% to 95%."
+                data-zh="我担任核心数据工程师与算法开发者，负责从百度与官方营养数据库收集大规模食物相关数据，并构建完整的数据预处理流程，包括图像质量筛选、目标检测、裁剪与去重等步骤。 
+                        此外，我构建了用于模型微调的数据集，并在食物识别与营养估算任务上对 TeleMM-7B 模型进行微调，将识别准确率从 74% 提升至 91%。">
+              </p>
+              <p data-en="Skills: Python, Pytorch, Transformers, Data Engineering, Large Multimodal Model Finetuning,Team Collaboration"
+                 data-zh="技能：Python, Pytorch, Transformers,数据工程,多模态大模型微调,团队合作">
+              </p>
+              <p>
+                [<a href="assets/teleai/teleglass.html" target="_blank" rel="noopener" data-en="Project Details" data-zh="项目详情">Details</a>]
+              </p>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener">
+                <img src="assets/teleai/teleego.png" alt="TeleEgo" class="img-thumbnail" style="width:100%; max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h5>
+                <a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener"
+                   data-en="TeleEgo: Benchmarking Egocentric AI Assistants in the Wild"
+                   data-zh="TeleEgo：面向第一视角 AI 助手的全模态基准">
+                   TeleEgo: Benchmarking Egocentric AI Assistants in the Wild
+                </a>
+              </h5>
+              <p 
+                data-en="I participated in the scene and task design of the TeleEgo benchmark, contributing to the creation of egocentric multimodal scenarios and long-term interaction tasks. 
+                        I was also involved in the data construction and collection process, ensuring the diversity and realism of the benchmark dataset."
+                data-zh="我参与了 TeleEgo 基准的场景与任务设计，负责构建第一视角多模态交互场景与长时任务,同时参与数据构建与采集过程。">
+              </p>
+              <p data-en="Skills: Python,Team Collaboration,Task Design"
+              data-zh="技能：Python,团队合作,场景统筹,任务设计">
+              </p>
+              <p>
+                [<a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener" data-en="Benchmark Homepage" data-zh="评估基准主页"></a>]
+                [<a href="https://github.com/TeleAI-UAGI/TeleEgo" target="_blank" rel="noopener" data-en="Code" data-zh="评估代码"></a>]
+            </p>
+            </div>
+          </div>
+        </section>
+      
+        <!-- -------------------- 长视频理解 -------------------- -->
+        <section id="proj-longvideo" class="mb-4" aria-labelledby="proj-longvideo-heading">
+          <h5 id="proj-longvideo-heading" data-en="🎞️ Long-Video Understanding" data-zh="🎞️ 长视频理解">🎞️ Long-Video Understanding</h5>
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/mava/mava.html" target="_blank" rel="noopener">
+                <img src="assets/mava/mava_lvbench.png" alt="Long-Video Agent" class="img-thumbnail" style="width:100%; max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h5>
+                <a href="assets/mava/mava.html" target="_blank" rel="noopener"
+                   data-en="Memory Augmented Video Agent for Long Form Video Understanding with Enhanced Episodic Memory Retrieval"
+                   data-zh="基于情节记忆检索的长视频理解Agent">
+                </a>
+              </h5>
+              <p 
+              data-en="Built a retrieval-augmented long-video question-answering system to tackle challenges of information redundancy and inefficient evidence retrieval, achieving an accuracy performance boost on LVBench (33% → 48%)"
+              data-zh="我参与构建了一个基于检索增强的长视频问答系统，用于解决信息冗余和检索低效等挑战，使在LVBench上的准确率从33%提升至48%">
+              </p>
+              <p data-en="Skills: Python, Pytorch, Video Data Mining, Vector Database, Large Multimodal Model Inference,Team Collaboration"
+              data-zh="技能：Python, Pytorch,视频信息检索,向量数据库,多模态大模型推理,团队合作">
+             </p>
+             <p>
+                [<a href="assets/mava/mava.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
+              </p>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/teleai/survey.html" target="_blank" rel="noopener">
+                <img src="assets/teleai/survey.png" alt="Survey" class="img-thumbnail" style="width:100%; max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h5>
+                <a href="assets/teleai/survey.html" target="_blank" rel="noopener"
+                data-en="Towards training-free long video understanding: methods, benchmarks, and open challenges"
+                data-zh="综述：面向免训练长视频理解的方法、基准与开放挑战">
+             </a>
+             </h5>
+             <p 
+             data-en="I searched and analyzed papers on video understanding benchmarks, summarized their focus and data scale, and discussed key challenges in long-form video understanding."
+             data-zh="我检索并分析了视频理解相关论文，统计了各基准的侧重点与数据规模，并探讨了长视频理解中的关键挑战。">
+             </p>
+             [<a href="https://link.springer.com/article/10.1007/s44336-025-00017-w" target="_blank" rel="noopener" data-en="Paper" data-zh="文章" >Paper</a>]
+            </div>
+          </div>
+        </section>
+      
+        <!-- -------------------- 黑夜无人机目标跟踪 -------------------- -->
+        <section id="proj-nightuav" class="mb-4" aria-labelledby="proj-nightuav-heading">
+          <h5 id="proj-nightuav-heading" data-en="🌙 Nighttime UAV Tracking" data-zh="🌙 黑夜无人机目标跟踪">🌙 Nighttime UAV Tracking</h5>
+      
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener">
+                <img class="img-thumbnail" src="assets/iros24_tdatrack/TDA workflow.png" 
+                     style="width:100%;max-height:200px" alt="TDA workflow">
+              </a>
+            </div>
+            <div class="project-info">
+              <h5>
+                <a href="assets/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener"
+                   data-en="Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking"
+                   data-zh="用于夜间无人机跟踪的提示驱动时序域自适应">
+                  Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking
+                </a>
+              </h5>
+              <p>
+                <span data-en="Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan"
+                      data-zh="Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan">
+                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan
+                </span>
+                <br>
+                <span data-en="<strong>Published in the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024).</strong>"
+                      data-zh="发表于IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024)">
+                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan
+                </span>
+                <p data-en="Skills: Python, Pytorch"
+                data-zh="技能：Python, Pytorch">
+                </p>
+                <br>
+                [<a href="assets/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener" data-en="Project Details" data-zh="项目详情">Details</a>]
+                [<a href="https://arxiv.org/pdf/2409.18533" target="_blank" rel="noopener" data-en="Paper" data-zh="文章">Paper</a>]
+                [<a href="https://github.com/vision4robotics/TDA-Track" target="_blank" rel="noopener" data-en="Code" data-zh="代码">Code</a>]
+              </p>
+            </div>
+          </div>
+          <hr>
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener">
+                <img class="img-thumbnail" src="assets/iros24_enhancer/LDEnhancer workflow.png" 
+                     style="width:100%;max-height:200px" alt="LDEnhancer workflow">
+              </a>
+            </div>
+            <div class="project-info">
+              <h5>
+                <a href="assets/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener"
+                   data-en="Enhancing Nighttime UAV Tracking with Light Distribution Suppression"
+                   data-zh="基于光分布抑制的夜间无人机跟踪增强方法">
+                  Enhancing Nighttime UAV Tracking with Light Distribution Suppression
+                </a>
+              </h5>
+              <p>
+                <span data-en="Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, and Kunhan Lu"
+                      data-zh="Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, and Kunhan Lu">
+                  Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, and Kunhan Lu
+                </span>
+                <br>
+                <span data-en="<strong>Published in the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024).</strong>"
+                  data-zh="发表于IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024)">
+                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan
+                </span>
+                <p data-en="Skills: Python, Pytorch"
+                   data-zh="技能：Python, Pytorch">
+                </p>
+                <br>
+                [<a href="assets/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener" data-en="Project Details" data-zh="项目详情">Details</a>]
+                [<a href="https://arxiv.org/pdf/2409.16631" target="_blank" rel="noopener" data-en="Paper" data-zh="文章" >Paper</a>]
+                [<a href="https://github.com/vision4robotics/LDEnhancer" target="_blank" data-en="Code" data-zh="代码" rel="noopener">Code</a>]
+              </p>
+            </div>
+          </div>
+        </section>
+      
+      </section>
+      
+
+        <div class="row marketing" style="width:100%">
+          <!--Place holder / 占位 -->
+          <hr>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <p>
+        <!-- footer 文本翻译 -->
+        <span data-en="© The design of this page was based on" data-zh="© 本页设计参考自"></span>
+        <a href="https://www.guandaoyang.com/" target="_blank" rel="noopener">Guandao Yang</a>'s website 2018.
+      </p>
+    </footer>
+
+  </div> <!-- /container -->
+
+  <!-- ======= 语言切换脚本（实现切换并记住用户选择） ======= -->
+  <script>
+    (function () {
+      // 选择所有带 data-en 属性的元素（我们约定凡是要翻译的元素都提供 data-en & data-zh）
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+
+      // 语言按钮
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+
+      // 切换并更新按钮样式与 html lang 属性
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          // 将 data-xxx 内容放到元素内部（innerHTML 支持包含 HTML）
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+
+        // 标记当前语言到 localStorage
+        try { localStorage.setItem('lang', lang); } catch (e) { /* ignore */ }
+
+        // 按钮样式表示当前激活（简单切换）
+        if (lang === 'en') {
+          btnEn.classList.add('active');
+          btnEn.classList.remove('btn-outline-primary', 'btn-outline-secondary');
+          btnEn.classList.add('btn-primary');
+
+          btnZh.classList.remove('active');
+          btnZh.classList.remove('btn-primary');
+          btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active');
+          btnZh.classList.remove('btn-outline-secondary');
+          btnZh.classList.add('btn-primary');
+
+          btnEn.classList.remove('active');
+          btnEn.classList.remove('btn-primary');
+          btnEn.classList.add('btn-outline-primary');
+        }
+
+        // 更新 html lang 属性（有利于无障碍与搜索引擎）
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+
+      // 事件监听
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+
+      // 页面加载时：恢复上次选择或默认英文
+      const saved = (function(){
+        try { return localStorage.getItem('lang'); } catch (e) { return null; }
+      })();
+      const initial = saved || 'en';
+      setLanguage(initial);
+
+      // --- 使用说明（开发者） ---
+      // 1) 添加新的可翻译文本：在元素上同时加 data-en="English" data-zh="中文"；
+      //    脚本会自动把属性注入到 innerHTML。
+      // 2) 新增项目页面：把项目页面放到 projects/ 目录（例如 projects/project1.html）并修改 href 链接和缩略图。
+    })();
+  </script>
+
+</body>
+</html>
