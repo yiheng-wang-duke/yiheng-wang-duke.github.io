@@ -45,9 +45,12 @@
           data-zh="面向免训练长视频理解：方法、基准与开放挑战（综述）">
         Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges</h3>
 
+      <p class="pub-authors">
+        Jingren Liu, Yun Wang, Long Zhang, <strong>Yiheng Wang</strong>, Shuning Xu, Ling Wang, Jiaqi Yan, Dell Zhang, Xiangyu Chen*
+      </p>
       <p class="pub-venue">
-        <em data-en="Survey Article &nbsp;·&nbsp; Published in Springer"
-            data-zh="综述文章 &nbsp;·&nbsp; 发表于 Springer">Survey Article &nbsp;·&nbsp; Published in Springer</em>
+        <em data-en="Vicinagearth, 2025 &nbsp;·&nbsp; work at TeleAI"
+            data-zh="Vicinagearth，2025 &nbsp;·&nbsp; 在 TeleAI 完成">Vicinagearth, 2025 &nbsp;·&nbsp; work at TeleAI</em>
       </p>
       <p class="pub-links">
         [<a href="https://link.springer.com/article/10.1007/s44336-025-00017-w" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
@@ -57,29 +60,39 @@
 
       <div class="sec">
         <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
-        <p data-en="Long-form video understanding is costly to train for and data-hungry. Leveraging powerful pretrained multimodal models in a <strong>training-free</strong> manner is an appealing alternative, but the relevant methods and benchmarks are scattered and hard to compare. This survey aims to organize the landscape and clarify where the field stands."
-           data-zh="长视频理解的训练成本高、数据需求大。以<strong>免训练</strong>的方式利用强大的预训练多模态模型是一个颇具吸引力的替代方案，但相关方法与基准分散、难以比较。本综述旨在梳理该领域全貌，厘清研究现状。">
+        <p data-en="The explosive growth of long-form video has exposed a core limitation of current systems, namely sustaining coherent temporal reasoning under tight compute budgets. This survey focuses on <strong>training-free</strong> long video understanding (LVU), methods that forgo retraining pretrained models and instead build dedicated inference-time pipelines to exploit their latent capabilities. It identifies three core challenges: pervasive <strong>visual-token redundancy</strong> that inflates computation with little information gain, <strong>constrained context windows</strong> that fragment temporal and semantic coherence, and the need for <strong>robust multi-modal reasoning</strong> across long temporal horizons."
+           data-zh="长视频的爆发式增长暴露了现有系统的一个核心局限：在紧张的算力预算下维持连贯的时序推理。本综述聚焦<strong>免训练（training-free）</strong>长视频理解（LVU），即不对预训练模型进行再训练，而是构建专门的推理期流水线以充分挖掘其潜在能力的方法。综述归纳出三大核心挑战：普遍存在的<strong>视觉 token 冗余</strong>，其在几乎不增加信息量的同时大幅抬高计算成本；<strong>受限的上下文窗口</strong>，会割裂时序与语义连贯性；以及在长时间跨度上进行<strong>鲁棒多模态推理</strong>的需求。">
           ...</p>
       </div>
 
       <div class="sec">
-        <h5 class="sec-title" data-en="Method (Survey Scope)" data-zh="方法（综述范围）">Method (Survey Scope)</h5>
-        <p data-en="I searched and analyzed a broad set of papers on video-understanding benchmarks and training-free approaches, <strong>categorizing methods</strong> and compiling statistics on each benchmark's <strong>focus and data scale</strong>. The survey structures training-free long-video understanding into coherent method families and situates existing benchmarks along their evaluation targets."
-           data-zh="我检索并分析了大量关于视频理解基准与免训练方法的论文，对<strong>方法进行归类</strong>，并统计了各基准的<strong>侧重点与数据规模</strong>。综述将免训练长视频理解梳理为若干连贯的方法族，并按评估目标定位现有基准。">
+        <h5 class="sec-title" data-en="Scope &amp; Taxonomy" data-zh="综述范围与分类">Scope &amp; Taxonomy</h5>
+        <p data-en="The survey organizes existing solutions into three methodological paradigms. <strong>Selection-based</strong> methods cut redundancy through semantically informed sampling and compression. <strong>Memory-enhanced</strong> architectures extend the effective temporal receptive field via hierarchical and streaming-aware memory. <strong>Agent-based</strong> reasoning reframes LVU as an active, iterative process driven by explicit goals and context-sensitive inference."
+           data-zh="综述将现有方案归纳为三种方法范式。<strong>基于选择（Selection-based）</strong>的方法通过语义感知的采样与压缩来削减冗余。<strong>记忆增强（Memory-enhanced）</strong>的架构借助层次化与流式感知的记忆机制扩展有效时序感受野。<strong>基于智能体（Agent-based）</strong>的推理则将 LVU 重新构想为由明确目标与上下文敏感推理驱动的主动、迭代过程。">
+          ...</p>
+        <p data-en="In parallel, it groups evaluation protocols into three families: <strong>general-purpose</strong> benchmarks for foundational cross-task ability, <strong>reasoning-centric</strong> benchmarks that stress-test spatio-temporal, causal, and compositional reasoning, and <strong>egocentric</strong> benchmarks for first-person perception and action. As a co-author, I surveyed and analyzed these benchmarks, compiling their focus and data scale and helping frame the open challenges."
+           data-zh="与此同时，综述将评估协议归为三类：面向基础跨任务能力的<strong>通用型（general-purpose）</strong>基准，重点考察时空、因果与组合推理的<strong>推理导向（reasoning-centric）</strong>基准，以及面向第一视角感知与动作的<strong>第一人称（egocentric）</strong>基准。作为合作作者，我检索并分析了这些基准，统计其侧重点与数据规模，并参与梳理开放挑战。">
           ...</p>
       </div>
 
       <figure class="pub-fig">
-        <img src="survey.png" alt="Training-free long video understanding survey overview">
-        <figcaption data-en="Overview of methods and benchmarks for training-free long-video understanding."
-                    data-zh="免训练长视频理解的方法与基准概览。">
-          Overview of methods and benchmarks for training-free long-video understanding.</figcaption>
+        <img src="survey.png" alt="Timeline of training-free long video understanding methods" style="width:100%;">
+        <figcaption data-en="Timeline of representative training-free methods for long video understanding."
+                    data-zh="免训练长视频理解代表性方法的发展时间线。">
+          Timeline of representative training-free methods for long video understanding.</figcaption>
+      </figure>
+
+      <figure class="pub-fig">
+        <img src="survey_performance.png" alt="Comparison of long video understanding benchmarks" style="width:56%;">
+        <figcaption data-en="Comparison of representative long-video understanding benchmarks compiled in the survey."
+                    data-zh="综述中整理的代表性长视频理解基准对比。">
+          Comparison of representative long-video understanding benchmarks compiled in the survey.</figcaption>
       </figure>
 
       <div class="sec">
         <h5 class="sec-title" data-en="Main Takeaways" data-zh="主要结论">Main Takeaways</h5>
-        <p data-en="The survey highlights the key open challenges in long-form video understanding — including efficient evidence localization, memory and context handling, and evaluation gaps — and points to promising directions for future training-free systems."
-           data-zh="综述指出了长视频理解中的关键开放挑战——包括高效证据定位、记忆与上下文处理，以及评估缺口——并指明了未来免训练系统的若干有前景的方向。">
+        <p data-en="The survey finds the field at a turning point: ad hoc, engineering-driven heuristics are giving way to principled, end-to-end frameworks that combine scalable computation with cognitively grounded reasoning. Rather than simply enlarging base models, the trend moves toward pragmatic, auditable, and resource-aware LVU pipelines built on top of pretrained models, extending LVU to professional analytics, embodied human-AI interaction, and safety-critical decision making."
+           data-zh="综述认为该领域正处于一个转折点：临时的、以工程为驱动的启发式方法，正让位于将可扩展计算与认知层面推理相结合的、有原则的端到端框架。相较于单纯增大基础模型，趋势正转向在预训练模型之上构建务实、可审计且资源感知的 LVU 流水线，并将 LVU 拓展到专业分析、具身人机交互以及安全攸关的决策场景。">
           ...</p>
       </div>
     </main>

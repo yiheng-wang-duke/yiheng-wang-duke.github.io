@@ -71,21 +71,38 @@
         <p data-en="We propose a <strong>dual prompt-driven feature encoding</strong> method that integrates prompt-conditioned adaptation and context-aware prompt evolution for domain-invariant encoding. A <strong>pyramid illumination prompter</strong> extracts multi-scale, frequency-aware illumination cues, while a <strong>dynamic viewpoint prompter</strong> adjusts deformable convolution offsets to accommodate viewpoint variations."
            data-zh="我们提出一种<strong>双提示驱动的特征编码</strong>方法，融合提示条件化自适应与上下文感知的提示演化，以实现域不变的特征编码。<strong>金字塔光照提示器</strong>提取多尺度、频率感知的光照线索，<strong>动态视角提示器</strong>则调整可变形卷积偏移以适应视角变化。">
           ...</p>
+        <p data-en="The two prompters are injected into the backbone and evolve with the input context, so the encoder adapts its features to each frame's lighting and viewpoint instead of relying on fixed weights. This keeps the target representation stable across the day-to-night domain shift, giving the tracker more reliable cues to follow."
+           data-zh="两个提示器被注入主干网络，并随输入上下文动态演化，使编码器能针对每一帧的光照与视角自适应地调整特征，而非依赖固定权重。这让目标表征在白天到夜晚的域偏移中保持稳定，为跟踪器提供更可靠的线索。">
+          ...</p>
       </div>
 
       <figure class="pub-fig">
-        <img src="dptracker.png" alt="DPTracker — dual prompt-driven feature encoding overview">
-        <figcaption data-en="Dual prompt-driven feature encoding: pyramid illumination prompter and dynamic viewpoint prompter."
-                    data-zh="双提示驱动特征编码：金字塔光照提示器与动态视角提示器。">
-          Dual prompt-driven feature encoding: pyramid illumination prompter and dynamic viewpoint prompter.</figcaption>
+        <img src="dptracker.png" alt="DPTracker dual prompt-driven feature encoding overview" style="width:100%;">
+        <figcaption data-en="Overall framework of the dual prompt-driven tracker."
+                    data-zh="双提示驱动跟踪器的整体框架。">
+          Overall framework of the dual prompt-driven tracker.</figcaption>
+      </figure>
+
+      <figure class="pub-fig">
+        <img src="prompters.png" alt="Pyramid illumination prompter and dynamic viewpoint prompter" style="width:66%;">
+        <figcaption data-en="The pyramid illumination prompter and the dynamic viewpoint prompter that supply illumination and viewpoint cues."
+                    data-zh="金字塔光照提示器与动态视角提示器，分别提供光照与视角线索。">
+          The pyramid illumination prompter and the dynamic viewpoint prompter.</figcaption>
       </figure>
 
       <div class="sec">
         <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
-        <p data-en="Extensive experiments and real-world tests demonstrate the effectiveness of the proposed tracker under <strong>challenging nighttime scenarios</strong>, validating the benefit of jointly modeling illumination and viewpoint cues for robust feature encoding."
-           data-zh="大量实验与真实世界测试验证了所提跟踪器在<strong>挑战性夜间场景</strong>下的有效性，证明了联合建模光照与视角线索对鲁棒特征编码的益处。">
+        <p data-en="On authoritative nighttime UAV tracking benchmarks, DPTracker outperforms state-of-the-art trackers in both precision and success rate, and the gains are largest on the most challenging low-light and viewpoint-varying sequences. Real-world onboard tests further confirm that it tracks reliably during live nighttime flight."
+           data-zh="在权威的夜间无人机跟踪基准上，DPTracker 在精度（precision）与成功率（success rate）上均优于当前最先进的跟踪器，且在最具挑战性的低光照与视角变化序列上提升最为明显。真实世界的机载测试进一步验证了它在实际夜间飞行中能够稳定跟踪。">
           ...</p>
       </div>
+
+      <figure class="pub-fig">
+        <img src="performance.png" alt="Comparison with state-of-the-art trackers on nighttime UAV benchmarks" style="width:88%;">
+        <figcaption data-en="Comparison with state-of-the-art trackers on nighttime UAV tracking benchmarks."
+                    data-zh="在夜间无人机跟踪基准上与当前最先进跟踪器的对比。">
+          Comparison with state-of-the-art trackers on nighttime UAV tracking benchmarks.</figcaption>
+      </figure>
     </main>
 
     <footer class="footer" style="margin-top:2rem;">
