@@ -62,38 +62,82 @@
 
       <div class="sec">
         <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
-        <p data-en="Multimodal large language models (MLLMs) have advanced rapidly in video understanding, yet the <strong>reliability</strong> of their responses is underexplored. A trustworthy model should recognize when <strong>no valid answer exists</strong> — but current benchmarks always assume a correct option is present, hiding this failure mode. We study <strong>absent answer detection</strong>: the correct answer is deliberately removed from the candidate set, and a reliable model is expected to say that none applies."
-           data-zh="多模态大模型（MLLMs）在视频理解上进步迅速，但其回答的<strong>可靠性</strong>仍未被充分研究。一个可信的模型应当能识别出<strong>「不存在有效答案」</strong>的情形——但现有基准总是假设正确选项存在，从而掩盖了这一失效模式。我们研究<strong>缺失答案检测</strong>：正确答案被刻意从候选集中移除，一个可靠的模型应当指出「无一适用」。">
+        <p data-en="While evaluating multimodal large language models (MLLMs) on video understanding, we found that the standard <strong>multiple-choice question (MCQ)</strong> protocol is not fully reliable. A model can land on the right option by exploiting surface cues or by simply picking the most plausible distractor, without genuinely grounding its answer in the video. To probe this, we propose <strong>absent answer detection</strong>. We deliberately remove the correct option from the candidate set. A truly reliable model should then recognize that <strong>none of the options is correct</strong> and, ideally, propose its own answer instead of forcing a choice."
+           data-zh="在评估多模态大模型（MLLMs）的视频理解能力时，我们发现标准的<strong>多选题（MCQ）</strong>评估并不完全可靠。模型可能借助表层线索，或直接选择最「像」的干扰项而恰好答对，并未真正依据视频内容作答。为此，我们提出<strong>缺失答案检测</strong>：刻意从候选集中移除正确选项。一个真正可靠的模型此时应当识别出<strong>所有选项都不正确</strong>，并在理想情况下给出自己的答案，而非被迫选择。">
           ...</p>
       </div>
+
+      <figure class="pub-fig">
+        <img src="idea.png" alt="Absent answer detection — core idea" style="width:100%;">
+        <figcaption data-en="Core idea: with the correct option removed, a reliable model should reject all candidates and propose its own answer."
+                    data-zh="核心思想：在正确选项被移除后，可靠的模型应拒绝所有候选选项并给出自己的答案。">
+          Core idea: with the correct option removed, a reliable model should reject all candidates and propose its own answer.</figcaption>
+      </figure>
 
       <div class="sec">
         <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
-        <p data-en="We present a diagnostic study evaluating absent answer detection under <strong>three settings</strong>: (1) multiple-choice questions augmented with a &ldquo;None of the Above&rdquo; option, (2) open-ended generation with an explicit detection instruction, and (3) standard evaluation without any guidance. We further probe <strong>chain-of-thought prompting</strong> as a mitigation strategy, across a diverse set of models and video-understanding benchmarks."
-           data-zh="我们开展了一项诊断性研究，在<strong>三种设定</strong>下评估缺失答案检测：(1) 带有「以上皆非」选项的多选题；(2) 带显式检测指令的开放式生成；(3) 无任何引导的标准评估。我们进一步在多种模型与视频理解基准上，探究<strong>思维链（chain-of-thought）提示</strong>作为缓解策略的效果。">
+        <p data-en="We design <strong>three detection settings</strong> that differ in how much guidance the model receives:"
+           data-zh="我们设计了<strong>三种检测设定</strong>，区别在于给模型的提示强度不同：">
+          ...</p>
+        <p style="margin-bottom:0.4rem;" data-en="&nbsp;&nbsp;<strong>1. Multi-choice detection:</strong> an explicit &ldquo;None of the Above&rdquo; option is added to the candidate set."
+           data-zh="&nbsp;&nbsp;<strong>1. 多选检测（Multi-choice detection）：</strong>在候选集中显式加入 &ldquo;None of the Above&rdquo; 选项。">
+          ...</p>
+        <p style="margin-bottom:0.4rem;" data-en="&nbsp;&nbsp;<strong>2. Open-ended detection:</strong> an instruction tells the model it may declare that none of the options is correct and give its own answer."
+           data-zh="&nbsp;&nbsp;<strong>2. 开放式检测（Open-ended detection）：</strong>通过指令提示模型可以声明所有选项都不正确，并给出自己的答案。">
+          ...</p>
+        <p data-en="&nbsp;&nbsp;<strong>3. Unprompted detection:</strong> no extra option and no instruction, so the model must exhibit the desired behavior spontaneously."
+           data-zh="&nbsp;&nbsp;<strong>3. 无提示检测（Unprompted detection）：</strong>不新增选项、也不给提示，模型需自发地表现出预期行为。">
           ...</p>
       </div>
-
-      <figure class="pub-fig">
-        <img src="idea.png" alt="Absent answer detection — core idea">
-        <figcaption data-en="Core idea: probing whether MLLMs can recognize that no valid answer exists."
-                    data-zh="核心思想：探究多模态大模型能否识别出「不存在有效答案」。">
-          Core idea: probing whether MLLMs can recognize that no valid answer exists.</figcaption>
-      </figure>
 
       <div class="sec">
         <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
-        <p data-en="Across models and benchmarks, MLLMs <strong>overwhelmingly select plausible distractors</strong> rather than detecting the absent answer. The failure is <strong>more pronounced in temporal reasoning</strong> tasks and <strong>worsens with denser frame sampling</strong>. Chain-of-thought prompting substantially improves detection rates but performance remains unsatisfactory — indicating that prompting alone is insufficient, and that multimodal systems need <strong>explicit detection mechanisms</strong>."
-           data-zh="在各类模型与基准上，多模态大模型<strong>绝大多数情况下会选择看似合理的干扰项</strong>，而非识别出答案缺失。该问题在<strong>时序推理</strong>任务中更为突出，并<strong>随帧采样密度增大而加剧</strong>。思维链提示虽显著提升了检测率，但性能仍不理想——说明仅靠提示不足以解决问题，多模态系统需要<strong>显式的检测机制</strong>。">
+        <p data-en="Across models and benchmarks, MLLMs perform <strong>poorly at absent answer detection</strong> and are strongly biased toward selecting the most plausible option. The failure is most severe in the <strong>unprompted</strong> setting, where the abstention rate is <strong>close to zero</strong>. Models almost never signal that no answer applies."
+           data-zh="在各类模型与基准上，多模态大模型的<strong>缺失答案检测表现普遍很差</strong>，强烈倾向于选择最「像」的选项。该问题在<strong>无提示</strong>设定下最为严重：模型的拒答率<strong>接近于零</strong>，几乎从不指出「无一适用」。">
           ...</p>
       </div>
 
       <figure class="pub-fig">
-        <img src="mllm_performance.png" alt="MLLM performance on absent answer detection">
-        <figcaption data-en="MLLM performance across settings and benchmarks."
-                    data-zh="多模态大模型在不同设定与基准上的表现。">
-          MLLM performance across settings and benchmarks.</figcaption>
+        <img src="mllm_performance.png" alt="MLLM performance on absent answer detection" style="width:75%;">
+        <figcaption data-en="Absent answer detection performance across models and settings. Detection rates stay low, especially without prompting."
+                    data-zh="不同模型与设定下的缺失答案检测表现：检测率普遍偏低，尤其在无提示时。">
+          Absent answer detection performance across models and settings.</figcaption>
       </figure>
+
+      <p class="sec" data-en="Beyond this overall weakness, we observe two consistent trends that shed light on <em>why</em> models fail."
+         data-zh="除了这一整体上的薄弱表现，我们还观察到两个稳定的趋势，有助于揭示模型失败的<em>原因</em>。">...</p>
+
+      <div class="sec">
+        <p data-en="<strong>More frames make things worse, not better.</strong> One might expect that giving the model more visual evidence would help it notice that the correct answer is missing. Instead, we find the opposite: as more frames are sampled, models become <strong>more confident in the wrong option</strong> rather than more cautious. The extra frames tend to supply additional surface cues that can be loosely matched to a plausible distractor, so denser sampling amplifies the bias toward committing to an answer instead of encouraging abstention."
+           data-zh="<strong>帧数越多，情况反而越糟。</strong> 直觉上，给模型更多视觉证据应当有助于它察觉正确答案的缺失。但我们发现事实恰恰相反：随着采样帧数增多，模型对错误选项<strong>反而更加自信</strong>，而非更加谨慎。额外的帧往往提供了更多可与某个「像样」干扰项松散匹配的表层线索，因此更密集的采样放大了模型「硬选一个答案」的倾向，而非鼓励其拒答。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="performance_vs_frames.png" alt="Detection performance vs. number of input frames" style="width:62%;">
+        <figcaption data-en="As more frames are sampled, models increasingly select wrong answers with high confidence."
+                    data-zh="随着输入帧数增多，模型越来越倾向于以高置信度选择错误答案。">
+          As more frames are sampled, models select wrong answers with higher confidence.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <p data-en="<strong>Chain-of-thought helps, but only partially.</strong> When we prompt models to reason step by step before answering, they more often pause to check whether any option truly matches the video, and the detection behavior partially recovers. This suggests the capability is latent but under-elicited: reasoning gives the model room to reconsider rather than commit immediately. However, the improvement is limited and inconsistent across models and tasks, so chain-of-thought alone does not close the gap."
+           data-zh="<strong>思维链有帮助，但只是部分。</strong> 当我们提示模型先逐步推理再作答时，它更常会停下来核查是否真有选项与视频相符，预期的检测行为得到了部分恢复。这说明该能力是潜在存在但未被充分激发的：推理为模型提供了重新斟酌、而非立即下结论的空间。然而这种提升有限，且在不同模型与任务间并不稳定，因此仅靠思维链并不能弥合差距。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="cot_helps.png" alt="Chain-of-thought prompting helps detection" style="width:58%;">
+        <figcaption data-en="Chain-of-thought prompting encourages reasoning and partly recovers the expected detection behavior."
+                    data-zh="思维链（CoT）提示促使模型推理，在一定程度上恢复了预期的检测行为。">
+          Chain-of-thought prompting partly recovers the expected detection behavior.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <p data-en="Overall, current MLLMs share a common defect: when no option is correct, they still commit to a plausible-looking answer rather than admitting that none applies. This points to a broader need to improve the <strong>faithfulness</strong> of MLLMs in video understanding, grounding responses in what the video actually supports instead of what merely looks likely."
+           data-zh="总体而言，现有多模态大模型存在一个共同缺陷：当没有正确选项时，它们仍会「硬选」一个看似合理的答案，而不愿承认「无一适用」。这指向一个更普遍的需求：提升多模态大模型在视频理解中的<strong>忠实性（faithfulness）</strong>，让回答真正基于视频所支持的内容，而非仅仅「看起来像」的内容。">
+          ...</p>
+      </div>
     </main>
 
     <footer class="footer" style="margin-top:2rem;">
