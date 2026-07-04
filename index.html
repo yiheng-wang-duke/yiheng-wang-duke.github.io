@@ -18,6 +18,10 @@
   <!-- Custom styles for this template (your file). -->
   <link href="css/narrow-jumbotron.css" rel="stylesheet">
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
   <!-- Inline extra tweaks -->
   <style>
     /* 去掉默认 ul 样式，用自定义点 */
@@ -27,6 +31,16 @@
     /* 语言按钮样式（固定在右上角） */
     .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
     .lang-switch .active { pointer-events: none; opacity: 0.8; }
+
+    /* 头像下方社交图标 */
+    .social-icons div { margin: 0.3rem 0; }
+    .social-icons a { font-size: 0.9rem; color: #555; text-decoration: none; }
+    .social-icons a i { font-size: 1.1rem; vertical-align: middle; margin-right: 0.3rem; }
+    .social-icons a:hover { color: #111; }
+
+    /* 无图片的论文条目 */
+    .pub-entry { padding: 0.4rem 0.5rem 0.4rem 1rem; border-left: 3px solid #dee2e6; margin-bottom: 0.8rem; }
+    .pub-entry h6 { margin-bottom: 0.2rem; }
 
     /* 简单的项目卡片样式微调 */
     .project-card { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
@@ -61,47 +75,64 @@
 
       <!-- 关于 / About -->
       <div id="about" class="row marketing" style="margin-top:2rem;">
-        <div class="col-lg-5 mt-5">
+
+        <!-- 左栏：头像 + 联系方式 -->
+        <div class="col-lg-3 mt-5 text-center">
           <figure class="figure">
-            <!-- 图片路径保持你现有 files/ 下的文件 -->
-            <img width="120%" src="assets/personal/photo.png" align="right" class="figure-img img-fluid rounded" alt="Me.">
+            <img width="100%" src="assets/personal/photo.png" class="figure-img img-fluid rounded" alt="Me.">
           </figure>
-        </div>
-
-        <div class="col-lg-6 mt-5 offset-lg-1">
-          <div class="row marketing" style="margin-top:0">
-            <!-- 使用 data-en 和 data-zh 存放双语文本 -->
-            <h2 data-en="Yiheng Wang" data-zh="汪伊恒">Yiheng Wang</h2>
-          </div>
-
-          <div class="row marketing">
-            <p data-en="😀 Welcome to my homepage. Hello!"
-               data-zh="😀 欢迎来到我的主页！">😀 Welcome to my homepage. Hello!</p>
-
-            <ul>
-              <li data-en="🎓 M.S. ECE @ Duke University, Durham, NC, USA"
-                  data-zh="🎓 杜克大学电气与计算机工程硕士在读，Durham, NC, USA"></li>
-              <li data-en="💼 MLE Intern @ TikTok, ex MLE Intern @ TeleAI, ex RA Intern @ Aopeng"
-                  data-zh="💼 实习经历：TikTok, 中国电信人工智能研究院, 奥鹏"></li>
-              <li data-en="🎓 B.Eng. Intelligent Manufacturing @ Tongji University, Shanghai (Outstanding Graduate of Shanghai 2025)"
-                  data-zh="🎓 同济大学智能制造工程本科（2025年上海市优秀毕业生）"></li>
-              <li data-en="🔬 Research interests: machine learning · multimodal large language models"
-                  data-zh="🔬 研究兴趣：机器学习 · 多模态大模型"></li>
-            </ul>
-          </div>
-
-          <div class="row marketing">
-            <p>
-              <!-- 邮件地址与外链不在 data- 属性里，保持原样，但标签说明可翻译 -->
-              <span data-en="📪 Contact:" data-zh="📪 联系方式">📪 联系方式:</span>
-              <a href="mailto:yw784@duke.edu">yw784@duke.edu</a>
-              <br>
-              <!-- 链接文本也提供翻译；外链在新标签打开 -->
-              [<a href="https://github.com/yiheng-wang-duke" target="_blank" rel="noopener" data-en="Github" data-zh="Github">Github</a>]
-              [<a href="https://www.linkedin.com/in/yiheng-wang-98b169353" target="_blank" rel="noopener" data-en="LinkedIn" data-zh="领英">LinkedIn</a>]
-            </p>
+          <div class="social-icons" style="margin-top:0.6rem;">
+            <div><a href="mailto:yw784@duke.edu"><i class="fas fa-envelope"></i> yw784@duke.edu</a></div>
+            <div><a href="https://www.linkedin.com/in/yiheng-wang-98b169353" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></div>
+            <div><a href="https://scholar.google.com/citations?user=31G6z4EAAAAJ&hl=zh-CN" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i> Google Scholar</a></div>
+            <div><a href="https://orcid.org/0009-0000-2896-167X" target="_blank" rel="noopener"><i class="ai ai-orcid"></i> ORCID</a></div>
           </div>
         </div>
+
+        <!-- 右栏：个人信息 -->
+        <div class="col-lg-9 mt-5">
+          <h2 data-en="Yiheng Wang" data-zh="汪伊恒">Yiheng Wang</h2>
+          <p data-en="😀 Welcome to my homepage!" data-zh="😀 欢迎来到我的主页！">😀 Welcome to my homepage!</p>
+
+          <p style="margin-bottom:0.2rem; margin-top:0.8rem">
+            <strong data-en="🎓 Education" data-zh="🎓 教育经历">🎓 Education</strong>
+          </p>
+          <ul>
+            <li data-en="M.S. Electrical &amp; Computer Engineering, <strong>Duke University</strong>, Durham, NC, USA (2025–present)"
+                data-zh="电气与计算机工程硕士，<strong>杜克大学</strong>，美国（2025至今）"></li>
+            <li data-en="B.Eng. Intelligent Manufacturing Engineering, <strong>Tongji University</strong>, Shanghai, China (2021–2025)"
+                data-zh="智能制造工程学士，<strong>同济大学</strong>，上海（2021–2025）"></li>
+          </ul>
+
+          <p style="margin-bottom:0.2rem; margin-top:0.8rem">
+            <strong data-en="💼 Work Experience" data-zh="💼 工作经历">💼 Work Experience</strong>
+          </p>
+          <ul>
+            <li data-en="MLE Intern @ <strong>TikTok</strong>"
+                data-zh="机器学习工程实习生，<strong>TikTok</strong>"></li>
+            <li data-en="MLE Intern @ <strong>TeleAI</strong>, China Telecom "
+                data-zh="多模态大模型实习生，<strong>中国电信人工智能研究院</strong>"></li>
+            <li data-en="RA Intern @ <strong>Aopeng</strong> Interactive Information Technology Co."
+                data-zh="研究助理实习生，<strong>上海奥鹏信息技术有限公司</strong>"></li>
+          </ul>
+
+          <p style="margin-bottom:0.2rem; margin-top:0.8rem">
+            <strong data-en="🏆 Honors &amp; Awards" data-zh="🏆 荣誉奖项">🏆 Honors &amp; Awards</strong>
+          </p>
+          <ul>
+            <li data-en="Outstanding Graduate of Shanghai, 2025"
+                data-zh="2025年上海市优秀毕业生"></li>
+            <li data-en="First-Class Scholarship of Tongji University, 2021,2022"
+                data-zh="2021,2022学年一等奖学金"></li>
+          </ul>
+
+          <p style="margin-bottom:0.2rem; margin-top:0.8rem">
+            <strong data-en="🔬 Research Interests" data-zh="🔬 研究兴趣">🔬 Research Interests</strong>
+          </p>
+          <p data-en="Machine learning &nbsp;·&nbsp; Computer vision &nbsp;·&nbsp; Multimodal large language models"
+             data-zh="机器学习 &nbsp;·&nbsp; 计算机视觉 &nbsp;·&nbsp; 多模态大模型"></p>
+        </div>
+
       </div>
 
       <!-- News / 最新动态 -->
@@ -114,38 +145,38 @@
         </div>
 
         <ul>
-          <li data-en="(2025/10) I'm working on deep learning algorithm to translate brain signals into text. Currently rank in the <strong> Brain-to-Text25 kaggle competition:7/131 </strong>"
-              data-zh="(2025/10) 我正在搭建 AI 算法提高脑信号→文本的转换性能。目前 <strong> Brain-to-Text25 kaggle 比赛排名：7/131" </strong>>
+          <li data-en="(2026/06) Our work <a href='https://arxiv.org/abs/2606.08239' target='_blank' rel='noopener'><strong>Absent Answer Detection for MLLMs in Video Understanding</strong></a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, is under review."
+              data-zh="(2026/06) 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>的工作：<a href='https://arxiv.org/abs/2606.08239' target='_blank' rel='noopener'><strong>When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</strong></a> 在审中。">
           </li>
-          <li data-en="(2025/10) I'm working with Prof. <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Yiran Chen</a>, Prof. <a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Hai &quot;Helen&quot; Li</a>, and <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>Yueqian Lin</a>, to conduct research in multimodal language models and video understanding."
+          <li data-en="(2026/05) I'm serving as <strong>MLE Intern at Tiktok</strong>."
+              data-zh="(2026/05) 我在 <strong>TikTok</strong>担任 <strong>MLE实习生</strong>">
+          </li>
+          <li data-en="(2026/04) Our work <a href='https://arxiv.org/abs/2604.01002' target='_blank' rel='noopener'><strong>Evidential Keyframe Sampling</strong></a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, is under review."
+              data-zh="(2026/04) 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>的工作：<a href='https://arxiv.org/abs/2604.01002' target='_blank' rel='noopener'><strong>Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</strong></a> 在审中。">
+          </li>
+          <li data-en="(2026/03) Our work <a href='https://arxiv.org/abs/2603.19628' target='_blank' rel='noopener'><strong>DPTracker</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University has been accepted by <strong>ICRA 2026</strong>!"
+              data-zh="(2026/03) 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作：<a href='https://arxiv.org/abs/2603.19628' target='_blank' rel='noopener'><strong>Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</strong></a> 被 <strong>ICRA 2026</strong> 接收！">
+          </li>
+          <li data-en="(2025/10) I'm working with <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Prof. Yiran Chen</a>, <a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Prof. Hai &quot;Helen&quot; Li</a>, and <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>Yueqian Lin</a>,at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, to conduct research in multimodal language models and video understanding."
               data-zh="(2025/10) 我在 <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Yiran Chen</a> 和 <a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Hai &quot;Helen&quot; Li</a> 教授的实验室，和 <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>林阅千</a>博士生一起，进行多模态大模型与视频理解的研究。">
           </li>
-          <li data-en="(2025/08-now) I'm pursuing <strong> M.S. in Electrical and Computer Engineering at Duke University, US</strong>. Welcome to contact me!"
+          <li data-en="(2025/08) I'm pursuing <strong> M.S. in Electrical and Computer Engineering at Duke University, US</strong>. Welcome to contact me!"
               data-zh="(2025/08) 我在 <strong>杜克大学 </strong>攻读 <strong>电气与计算机工程硕士学位 </strong>。欢迎联系我！">
-            (2025/08-now) I'm pursuing M.S. in Electrical and Computer Engineering at Duke Univerisity, US. Welcome to contact me!
           </li>
-          <li data-en="(2025/03) I served as <strong>Machine Learning Engineer Assistant Intern at TeleAI</strong>. I worked with Dr. <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>Xiangyu Chen</a> to build an agent with food recognition and nutrition analysis capability for AI glasses."
+          <li data-en="(2025/03) I served as <strong>MLE Intern at TeleAI</strong>. I worked with Dr. <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>Xiangyu Chen</a> to build an agent with food recognition and nutrition analysis capability for AI glasses."
               data-zh="(2025/03) 我在 <strong>中国电信人工智能研究院</strong>担任 <strong>多模态大模型实习生</strong>，在 <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>陈祥宇</a>博士带领下为可穿戴 AI 眼镜构建具备食物识别与营养分析能力的智能 Agent。">
-            (2025/03) I served as <strong>Machine Learning Engineer Assistant Intern</strong> at TeleAI. I'm working with Dr. Xiangyu Chen [<a href="https://chxy95.github.io/" target="_blank" rel="noopener">Homepage</a>] to build an agent with food recoginition and nutrition analysis capability for wearable AI glasses.
           </li>
 
           <li data-en="(2024/07) I served as <strong>Research Assistant Intern</strong> at Shanghai Aopeng Interactive Information Technology Co., working with Prof. <a href='https://shawnshenjx.github.io/' target='_blank' rel='noopener'>Shawn Shen</a> on video-memory agents."
               data-zh="(2024/07) 我在上海奥鹏信息技术有限公司担任研究助理实习生，与 <a href='https://shawnshenjx.github.io/' target='_blank' rel='noopener'>沈俊潇</a>教授合作，开发具备长视频记忆能力的视频理解 Agent。">
-            (2024/07) I served as <strong>Research Assistant Intern</strong> at Shanghai Aopeng Interactive Information Technology Co. I'm working with Prof. Shawn Shen [<a href="https://shawnshenjx.github.io/" target="_blank" rel="noopener">Homepage</a>] to build an agent with memory capability over long video contexts.
           </li>
 
-          <li data-en="(2024/06) Our work <strong>TDA-Track</strong> at V4R lab, Tongji University, was accepted by <strong>IROS 2024</strong>!"
-              data-zh="(2024/06) 在同济大学 V4R 实验室的工作 <strong>TDA-Track 被 IROS 2024 接收！</strong>">
-            (2024/06) Our work <strong>TDA-Track</strong> has been accepted by <strong>IROS 2024</strong>!
-            [<a href="https://arxiv.org/pdf/2409.18533" target="_blank" rel="noopener">Paper</a>]
-            [<a href="https://github.com/vision4robotics/TDA-Track" target="_blank" rel="noopener">Code</a>].
+          <li data-en="(2024/06) Our work <a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'><strong>TDA-Track</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, was accepted by <strong>IROS 2024</strong>! [<a href='https://arxiv.org/pdf/2409.18533' target='_blank' rel='noopener'>Paper</a>] [<a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'>Code</a>]"
+              data-zh="(2024/06) 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作 <a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'><strong>TDA-Track</strong></a> 被 <strong>IROS 2024</strong> 接收！[<a href='https://arxiv.org/pdf/2409.18533' target='_blank' rel='noopener'>论文</a>] [<a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'>代码</a>]">
           </li>
 
-          <li data-en="(2024/06) Our work <strong>LDEnhancer</strong> at V4R lab, Tongji University, was accepted by <strong>IROS 2024</strong>!"
-              data-zh="(2024/06) 在同济大学 V4R 实验室的工作 <strong>LDEnhancer被 IROS 2024 接收</strong>">
-            (2024/06) Our work <strong>LDEnhancer</strong> has been accepted by <strong>IROS 2024</strong>!
-            [<a href="https://arxiv.org/pdf/2409.16631" target="_blank" rel="noopener">Paper</a>]
-            [<a href="https://github.com/vision4robotics/LDEnhancer" target="_blank" rel="noopener">Code</a>].
+          <li data-en="(2024/06) Our work <a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'><strong>LDEnhancer</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, was accepted by <strong>IROS 2024</strong>! [<a href='https://arxiv.org/pdf/2409.16631' target='_blank' rel='noopener'>Paper</a>] [<a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'>Code</a>]"
+              data-zh="(2024/06) 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作 <a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'><strong>LDEnhancer</strong></a> 被 <strong>IROS 2024</strong> 接收！[<a href='https://arxiv.org/pdf/2409.16631' target='_blank' rel='noopener'>论文</a>] [<a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'>代码</a>]">
           </li>
         </ul>
       </div>
@@ -153,221 +184,200 @@
       <section id="Projects" class="row marketing" aria-labelledby="projects-heading">
         <div class="row" style="width:100%">
           <div class="col-lg-12">
-            <h4 id="projects-heading" data-en="📁 Projects" data-zh="📁 项目">📁 Projects</h4>
+            <h4 id="projects-heading" data-en="📁 Publications &amp; Projects" data-zh="📁 论文与项目">📁 Publications &amp; Projects</h4>
             <hr>
           </div>
         </div>
-      
-        <!-- 内部导航：Quick links -->
+
+        <!-- Quick nav -->
         <div class="row mb-3">
           <div class="col-lg-12">
-            <div class="btn-group" role="group" aria-label="project sections" style="margin-bottom:0.5rem;">
-              <a class="btn btn-sm btn-outline-secondary" href="#proj-agent" data-en="Intelligent Agent" data-zh="智能 Agent">Intelligent Agent</a>
-              <a class="btn btn-sm btn-outline-secondary" href="#proj-longvideo" data-en="Long-Video Understanding" data-zh="长视频理解">Long-Video Understanding</a>
-              <a class="btn btn-sm btn-outline-secondary" href="#proj-nightuav" data-en="Nighttime UAV Tracking" data-zh="黑夜无人机目标跟踪">Nighttime UAV Tracking</a>
+            <div class="btn-group" role="group" style="margin-bottom:0.5rem;">
+              <a class="btn btn-sm btn-outline-secondary" href="#proj-video" data-en="Multimodal LLM in Video" data-zh="视频多模态大模型">Multimodal LLM in Video</a>
+              <a class="btn btn-sm btn-outline-secondary" href="#proj-nutrition" data-en="Nutrition Analysis Agent" data-zh="营养分析 Agent">Nutrition Analysis Agent</a>
+              <a class="btn btn-sm btn-outline-secondary" href="#proj-uav" data-en="Nighttime UAV Tracking" data-zh="夜间无人机跟踪">Nighttime UAV Tracking</a>
             </div>
           </div>
         </div>
       
-        <!-- -------------------- 智能 Agent -------------------- -->
-        <section id="proj-agent" class="mb-4" aria-labelledby="proj-agent-heading">
-          <h5 id="proj-agent-heading" data-en="🤖 Intelligent Agent" data-zh="🤖 智能 Agent">🤖 Intelligent Agent</h5>
-          <p data-en="I have strong interest in building intelligent agents with large language models or large multimodal models.
-                      Previously, I had project expreience in building a food recognition and nutrition analysis agent during my internship at TeleAI.
-                      And I also contributed to the construction of agentic benchmark TeleEgo to evaluate large multimodal models for egocentric long-term video question answering performance."
-             data-zh="我对基于大型语言模型（LLM）或大型多模态模型（LMM）构建智能体（Intelligent Agents）有着浓厚的兴趣。
-                      此前，在 TeleAI 实习期间，我参与了食物识别与营养分析智能体的项目核心开发。
-                      我还参与了 TeleEgo 基准的建设，用于评估大型多模态模型在第一视角长时视频问答任务中的表现。">
-            Projects focused on building multimodal agents (eg. wearable AI, nutrition agents).
-          </p>
-      
-          <div class="project-card">
-            <div class="project-thumb">
-              <a href="assets/internships/intern_teleai/teleglass.html" target="_blank" rel="noopener">
-                <img src="assets/internships/intern_teleai/teleglass.jpg" alt="Food Recognition and Nutrition Analysis Agent" class="img-thumbnail" style="width:100%; max-height:200px;">
-              </a>
-            </div>
-            <div class="project-info">
-              <h5>
-                <a href="assets/internships/intern_teleai/teleglass.html" target="_blank" rel="noopener"
-                   data-en="Food Recognition & Nutrition Estimation Agent for Wearable AI glasses"
-                   data-zh="食物识别与营养估算Agent">
-                </a>
-              </h5>
-              <p 
-                data-en="I served as the core data engineer and algorithm developer. 
-                        I collected large-scale food-related data from Baidu and official nutrition databases, and built a complete data preprocessing pipeline, including image quality filtering, object detection, cropping, and deduplication. 
-                        In addition, I prepared fine-tuning datasets and fine-tuned the TeleMM-7B model for food recognition and nutrition estimation, improving recognition accuracy from 74% to 95%."
-                data-zh="我担任核心数据工程师与算法开发者，负责从百度与官方营养数据库收集大规模食物相关数据，并构建完整的数据预处理流程，包括图像质量筛选、目标检测、裁剪与去重等步骤。 
-                        此外，我构建了用于模型微调的数据集，并在食物识别与营养估算任务上对 TeleMM-7B 模型进行微调，将识别准确率从 74% 提升至 91%。">
-              </p>
-              <p data-en="Skills: Python, Pytorch, Transformers, Data Engineering, Large Multimodal Model Finetuning,Team Collaboration"
-                 data-zh="技能：Python, Pytorch, Transformers,数据工程,多模态大模型微调,团队合作">
-              </p>
-              <p>
-                [<a href="assets/internships/intern_teleai/teleglass.html" target="_blank" rel="noopener" data-en="Project Details" data-zh="项目详情">Details</a>]
-              </p>
-            </div>
-          </div>
-      
-          <div class="project-card">
-            <div class="project-thumb">
-              <a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener">
-                <img src="assets/internships/intern_teleai/teleego.png" alt="TeleEgo" class="img-thumbnail" style="width:100%; max-height:200px;">
-              </a>
-            </div>
-            <div class="project-info">
-              <h5>
-                <a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener"
-                   data-en="TeleEgo: Benchmarking Egocentric AI Assistants in the Wild"
-                   data-zh="TeleEgo：面向第一视角 AI 助手的全模态基准">
-                   TeleEgo: Benchmarking Egocentric AI Assistants in the Wild
-                </a>
-              </h5>
-              <p 
-                data-en="I participated in the scene and task design of the TeleEgo benchmark, contributing to the creation of egocentric multimodal scenarios and long-term interaction tasks. 
-                        I was also involved in the data construction and collection process, ensuring the diversity and realism of the benchmark dataset."
-                data-zh="我参与了 TeleEgo 基准的场景与任务设计，负责构建第一视角多模态交互场景与长时任务,同时参与数据构建与采集过程。">
-              </p>
-              <p data-en="Skills: Python,Team Collaboration,Task Design"
-              data-zh="技能：Python,团队合作,场景统筹,任务设计">
-              </p>
-              <p>
-                [<a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener" data-en="Benchmark Homepage" data-zh="评估基准主页"></a>]
-                [<a href="https://github.com/TeleAI-UAGI/TeleEgo" target="_blank" rel="noopener" data-en="Code" data-zh="评估代码"></a>]
+        <!-- ===== 1. Multimodal LLM in Video Understanding ===== -->
+        <section id="proj-video" class="mb-5">
+          <h5 data-en="🎬 Multimodal LLM in Video Understanding" data-zh="🎬 视频多模态大模型">🎬 Multimodal LLM in Video Understanding</h5>
+
+          <div class="pub-entry">
+            <h6><a href="https://arxiv.org/abs/2606.08239" target="_blank" rel="noopener"
+                   data-en="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding"
+                   data-zh="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding">
+                When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</a></h6>
+            <p style="margin:0; font-size:0.88rem;">
+              <span data-en="<strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai &quot;Helen&quot; Li, Yiran Chen"
+                    data-zh="<strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai &quot;Helen&quot; Li, Yiran Chen">
+                <strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai "Helen" Li, Yiran Chen</span><br>
+              <em data-en="Under Review, 2026" data-zh="在审，2026">Under Review, 2026</em>
+              &nbsp;[<a href="https://arxiv.org/abs/2606.08239" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
             </p>
-            </div>
           </div>
-        </section>
-      
-        <!-- -------------------- 长视频理解 -------------------- -->
-        <section id="proj-longvideo" class="mb-4" aria-labelledby="proj-longvideo-heading">
-          <h5 id="proj-longvideo-heading" data-en="🎞️ Long-Video Understanding" data-zh="🎞️ 长视频理解">🎞️ Long-Video Understanding</h5>
+
+          <div class="pub-entry">
+            <h6><a href="https://arxiv.org/abs/2604.01002" target="_blank" rel="noopener"
+                   data-en="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding"
+                   data-zh="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding">
+                Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</a></h6>
+            <p style="margin:0; font-size:0.88rem;">
+              <span data-en="<strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai &quot;Helen&quot; Li, Yiran Chen"
+                    data-zh="<strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai &quot;Helen&quot; Li, Yiran Chen">
+                <strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai "Helen" Li, Yiran Chen</span><br>
+              <em data-en="Under Review, 2026" data-zh="在审，2026">Under Review, 2026</em>
+              &nbsp;[<a href="https://arxiv.org/abs/2604.01002" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+            </p>
+          </div>
+
           <div class="project-card">
             <div class="project-thumb">
               <a href="assets/internships/intern_mava/mava.html" target="_blank" rel="noopener">
-                <img src="assets/internships/intern_mava/mava_lvbench.png" alt="Long-Video Agent" class="img-thumbnail" style="width:100%; max-height:200px;">
+                <img src="assets/internships/intern_mava/mava_lvbench.png" alt="MAVA" class="img-thumbnail" style="width:100%;max-height:200px;">
               </a>
             </div>
             <div class="project-info">
-              <h5>
-                <a href="assets/internships/intern_mava/mava.html" target="_blank" rel="noopener"
-                   data-en="Memory Augmented Video Agent for Long Form Video Understanding with Enhanced Episodic Memory Retrieval"
-                   data-zh="基于情节记忆检索的长视频理解Agent">
-                </a>
-              </h5>
-              <p 
-              data-en="Built a retrieval-augmented long-video question-answering system to tackle challenges of information redundancy and inefficient evidence retrieval, achieving an accuracy performance boost on LVBench (33% → 48%)"
-              data-zh="我参与构建了一个基于检索增强的长视频问答系统，用于解决信息冗余和检索低效等挑战，使在LVBench上的准确率从33%提升至48%">
-              </p>
-              <p data-en="Skills: Python, Pytorch, Video Data Mining, Vector Database, Large Multimodal Model Inference,Team Collaboration"
-              data-zh="技能：Python, Pytorch,视频信息检索,向量数据库,多模态大模型推理,团队合作">
-             </p>
-             <p>
-                [<a href="assets/internships/intern_mava/mava.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
-              </p>
+              <h6><a href="assets/internships/intern_mava/mava.html" target="_blank" rel="noopener"
+                     data-en="Memory Augmented Video Agent for Long-Form Video Understanding"
+                     data-zh="基于情节记忆检索的长视频理解 Agent">
+                  Memory Augmented Video Agent for Long-Form Video Understanding</a></h6>
+              <p data-en="Built a retrieval-augmented long-video QA system; accuracy on LVBench: 33% → 48%."
+                 data-zh="构建基于检索增强的长视频问答系统，LVBench 准确率从 33% 提升至 48%。"></p>
+              <p>[<a href="assets/internships/intern_mava/mava.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]</p>
             </div>
           </div>
-      
+
           <div class="project-card">
             <div class="project-thumb">
               <a href="assets/internships/intern_teleai/survey.html" target="_blank" rel="noopener">
-                <img src="assets/internships/intern_teleai/survey.png" alt="Survey" class="img-thumbnail" style="width:100%; max-height:200px;">
+                <img src="assets/internships/intern_teleai/survey.png" alt="Survey" class="img-thumbnail" style="width:100%;max-height:200px;">
               </a>
             </div>
             <div class="project-info">
-              <h5>
-                <a href="assets/internships/intern_teleai/survey.html" target="_blank" rel="noopener"
-                data-en="Towards training-free long video understanding: methods, benchmarks, and open challenges"
-                data-zh="综述：面向免训练长视频理解的方法、基准与开放挑战">
-             </a>
-             </h5>
-             <p 
-             data-en="I searched and analyzed papers on video understanding benchmarks, summarized their focus and data scale, and discussed key challenges in long-form video understanding."
-             data-zh="我检索并分析了视频理解相关论文，统计了各基准的侧重点与数据规模，并探讨了长视频理解中的关键挑战。">
-             </p>
-             [<a href="https://link.springer.com/article/10.1007/s44336-025-00017-w" target="_blank" rel="noopener" data-en="Paper" data-zh="文章" >Paper</a>]
+              <h6><a href="assets/internships/intern_teleai/survey.html" target="_blank" rel="noopener"
+                     data-en="Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges"
+                     data-zh="综述：面向免训练长视频理解的方法、基准与开放挑战">
+                  Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges</a></h6>
+              <p data-en="Survey on training-free long-form video understanding methods and benchmarks."
+                 data-zh="系统综述免训练长视频理解方法与评估基准。"></p>
+              <p>[<a href="https://link.springer.com/article/10.1007/s44336-025-00017-w" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]</p>
             </div>
           </div>
         </section>
-      
-        <!-- -------------------- 黑夜无人机目标跟踪 -------------------- -->
-        <section id="proj-nightuav" class="mb-4" aria-labelledby="proj-nightuav-heading">
-          <h5 id="proj-nightuav-heading" data-en="🌙 Nighttime UAV Tracking" data-zh="🌙 黑夜无人机目标跟踪">🌙 Nighttime UAV Tracking</h5>
-      
+
+        <!-- ===== 2. Multimodal LLM Agent for Nutrition Analysis ===== -->
+        <section id="proj-nutrition" class="mb-5">
+          <h5 data-en="🍎 Multimodal LLM Agent for Nutrition Analysis" data-zh="🍎 营养分析多模态 Agent">🍎 Multimodal LLM Agent for Nutrition Analysis</h5>
+
           <div class="project-card">
             <div class="project-thumb">
-              <a href="assets/publications/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener">
-                <img class="img-thumbnail" src="assets/publications/iros24_tdatrack/TDA workflow.png" 
-                     style="width:100%;max-height:200px" alt="TDA workflow">
+              <a href="assets/internships/intern_teleai/teleglass.html" target="_blank" rel="noopener">
+                <img src="assets/internships/intern_teleai/teleglass.jpg" alt="TeleGlass" class="img-thumbnail" style="width:100%;max-height:200px;">
               </a>
             </div>
             <div class="project-info">
-              <h5>
-                <a href="assets/publications/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener"
-                   data-en="Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking"
-                   data-zh="用于夜间无人机跟踪的提示驱动时序域自适应">
-                  Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking
-                </a>
-              </h5>
+              <h6><a href="assets/internships/intern_teleai/teleglass.html" target="_blank" rel="noopener"
+                     data-en="Food Recognition &amp; Nutrition Estimation Agent for Wearable AI Glasses"
+                     data-zh="面向可穿戴 AI 眼镜的食物识别与营养估算 Agent">
+                  Food Recognition &amp; Nutrition Estimation Agent for Wearable AI Glasses</a></h6>
+              <p data-en="Core data engineer and algorithm developer at TeleAI. Fine-tuned TeleMM-7B for food recognition and nutrition estimation; accuracy improved from 74% to 95%."
+                 data-zh="在 TeleAI 担任核心数据工程师与算法开发者，对 TeleMM-7B 进行微调，食物识别准确率从 74% 提升至 95%。"></p>
+              <p>[<a href="assets/internships/intern_teleai/teleglass.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener">
+                <img src="assets/internships/intern_teleai/teleego.png" alt="TeleEgo" class="img-thumbnail" style="width:100%;max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h6><a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener"
+                     data-en="TeleEgo: Benchmarking Egocentric AI Assistants in the Wild"
+                     data-zh="TeleEgo：面向第一视角 AI 助手的多模态基准">
+                  TeleEgo: Benchmarking Egocentric AI Assistants in the Wild</a></h6>
+              <p data-en="Contributed to scene/task design and data collection for this egocentric multimodal benchmark."
+                 data-zh="参与场景与任务设计及数据采集，构建第一视角多模态评估基准。"></p>
               <p>
-                <span data-en="Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan"
-                      data-zh="Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan">
-                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan
-                </span>
-                <br>
-                <span data-en="<strong>Published in the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024).</strong>"
-                      data-zh="发表于IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024)">
-                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan
-                </span>
-                <p data-en="Skills: Python, Pytorch"
-                data-zh="技能：Python, Pytorch">
-                </p>
-                <br>
-                [<a href="assets/publications/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener" data-en="Project Details" data-zh="项目详情">Details</a>]
-                [<a href="https://arxiv.org/pdf/2409.18533" target="_blank" rel="noopener" data-en="Paper" data-zh="文章">Paper</a>]
+                [<a href="https://teleai-uagi.github.io/TeleEgo/" target="_blank" rel="noopener" data-en="Homepage" data-zh="主页">Homepage</a>]
+                [<a href="https://github.com/TeleAI-UAGI/TeleEgo" target="_blank" rel="noopener" data-en="Code" data-zh="代码">Code</a>]
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 3. Nighttime UAV Tracking ===== -->
+        <section id="proj-uav" class="mb-5">
+          <h5 data-en="🌙 Nighttime UAV Tracking" data-zh="🌙 夜间无人机目标跟踪">🌙 Nighttime UAV Tracking</h5>
+
+          <div class="pub-entry">
+            <h6><a href="https://arxiv.org/abs/2603.19628" target="_blank" rel="noopener"
+                   data-en="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking"
+                   data-zh="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking">
+                Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</a></h6>
+            <p style="margin:0; font-size:0.88rem;">
+              <span data-en="<strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang"
+                    data-zh="<strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang">
+                <strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang</span><br>
+              <em data-en="IEEE International Conference on Robotics and Automation (ICRA 2026)" data-zh="IEEE International Conference on Robotics and Automation (ICRA 2026)">ICRA 2026</em>
+              &nbsp;[<a href="https://arxiv.org/abs/2603.19628" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/publications/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener">
+                <img class="img-thumbnail" src="assets/publications/iros24_tdatrack/TDA workflow.png" style="width:100%;max-height:200px;" alt="TDA-Track">
+              </a>
+            </div>
+            <div class="project-info">
+              <h6><a href="assets/publications/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener"
+                     data-en="Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking"
+                     data-zh="用于夜间无人机跟踪的提示驱动时序域自适应">
+                  Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking</a></h6>
+              <p style="font-size:0.88rem;">
+                <span data-en="Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, Jia Pan"
+                      data-zh="Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, Jia Pan">
+                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, Jia Pan</span><br>
+                <em>IROS 2024</em>
+              </p>
+              <p>
+                [<a href="assets/publications/iros24_tdatrack/TDATrack.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
+                [<a href="https://arxiv.org/pdf/2409.18533" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
                 [<a href="https://github.com/vision4robotics/TDA-Track" target="_blank" rel="noopener" data-en="Code" data-zh="代码">Code</a>]
               </p>
             </div>
           </div>
-          <hr>
+
           <div class="project-card">
             <div class="project-thumb">
               <a href="assets/publications/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener">
-                <img class="img-thumbnail" src="assets/publications/iros24_enhancer/LDEnhancer workflow.png" 
-                     style="width:100%;max-height:200px" alt="LDEnhancer workflow">
+                <img class="img-thumbnail" src="assets/publications/iros24_enhancer/LDEnhancer workflow.png" style="width:100%;max-height:200px;" alt="LDEnhancer">
               </a>
             </div>
             <div class="project-info">
-              <h5>
-                <a href="assets/publications/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener"
-                   data-en="Enhancing Nighttime UAV Tracking with Light Distribution Suppression"
-                   data-zh="基于光分布抑制的夜间无人机跟踪增强方法">
-                  Enhancing Nighttime UAV Tracking with Light Distribution Suppression
-                </a>
-              </h5>
+              <h6><a href="assets/publications/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener"
+                     data-en="Enhancing Nighttime UAV Tracking with Light Distribution Suppression"
+                     data-zh="基于光分布抑制的夜间无人机跟踪增强方法">
+                  Enhancing Nighttime UAV Tracking with Light Distribution Suppression</a></h6>
+              <p style="font-size:0.88rem;">
+                <span data-en="Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, Kunhan Lu"
+                      data-zh="Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, Kunhan Lu">
+                  Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, Kunhan Lu</span><br>
+                <em>IROS 2024</em>
+              </p>
               <p>
-                <span data-en="Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, and Kunhan Lu"
-                      data-zh="Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, and Kunhan Lu">
-                  Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, and Kunhan Lu
-                </span>
-                <br>
-                <span data-en="<strong>Published in the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024).</strong>"
-                  data-zh="发表于IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024)">
-                  Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, and Jia Pan
-                </span>
-                <p data-en="Skills: Python, Pytorch"
-                   data-zh="技能：Python, Pytorch">
-                </p>
-                <br>
-                [<a href="assets/publications/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener" data-en="Project Details" data-zh="项目详情">Details</a>]
-                [<a href="https://arxiv.org/pdf/2409.16631" target="_blank" rel="noopener" data-en="Paper" data-zh="文章" >Paper</a>]
-                [<a href="https://github.com/vision4robotics/LDEnhancer" target="_blank" data-en="Code" data-zh="代码" rel="noopener">Code</a>]
+                [<a href="assets/publications/iros24_enhancer/LDEnhancer.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
+                [<a href="https://arxiv.org/pdf/2409.16631" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+                [<a href="https://github.com/vision4robotics/LDEnhancer" target="_blank" rel="noopener" data-en="Code" data-zh="代码">Code</a>]
               </p>
             </div>
           </div>
         </section>
-      
+
       </section>
       
 
