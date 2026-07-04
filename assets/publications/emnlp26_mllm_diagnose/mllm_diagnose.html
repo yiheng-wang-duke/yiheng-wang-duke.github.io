@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>Absent Answer Detection for MLLMs — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding"
+          data-zh="当没有正确答案时：诊断多模态大模型在视频理解中的缺失答案检测能力">
+        When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</h3>
+
+      <p class="pub-authors">
+        <strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu,
+        Hai "Helen" Li, Yiran Chen
+      </p>
+      <p class="pub-venue">
+        <em data-en="Under Review, 2026 &nbsp;·&nbsp; CEI Lab, Duke University"
+            data-zh="在审，2026 &nbsp;·&nbsp; 杜克大学 CEI 实验室">Under Review, 2026 &nbsp;·&nbsp; CEI Lab, Duke University</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://arxiv.org/abs/2606.08239" target="_blank" rel="noopener" data-en="arXiv" data-zh="arXiv">arXiv</a>]
+        [<a href="https://cei.pratt.duke.edu/" target="_blank" rel="noopener" data-en="Lab" data-zh="实验室">Lab</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Multimodal large language models (MLLMs) have advanced rapidly in video understanding, yet the <strong>reliability</strong> of their responses is underexplored. A trustworthy model should recognize when <strong>no valid answer exists</strong> — but current benchmarks always assume a correct option is present, hiding this failure mode. We study <strong>absent answer detection</strong>: the correct answer is deliberately removed from the candidate set, and a reliable model is expected to say that none applies."
+           data-zh="多模态大模型（MLLMs）在视频理解上进步迅速，但其回答的<strong>可靠性</strong>仍未被充分研究。一个可信的模型应当能识别出<strong>「不存在有效答案」</strong>的情形——但现有基准总是假设正确选项存在，从而掩盖了这一失效模式。我们研究<strong>缺失答案检测</strong>：正确答案被刻意从候选集中移除，一个可靠的模型应当指出「无一适用」。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
+        <p data-en="We present a diagnostic study evaluating absent answer detection under <strong>three settings</strong>: (1) multiple-choice questions augmented with a &ldquo;None of the Above&rdquo; option, (2) open-ended generation with an explicit detection instruction, and (3) standard evaluation without any guidance. We further probe <strong>chain-of-thought prompting</strong> as a mitigation strategy, across a diverse set of models and video-understanding benchmarks."
+           data-zh="我们开展了一项诊断性研究，在<strong>三种设定</strong>下评估缺失答案检测：(1) 带有「以上皆非」选项的多选题；(2) 带显式检测指令的开放式生成；(3) 无任何引导的标准评估。我们进一步在多种模型与视频理解基准上，探究<strong>思维链（chain-of-thought）提示</strong>作为缓解策略的效果。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="idea.png" alt="Absent answer detection — core idea">
+        <figcaption data-en="Core idea: probing whether MLLMs can recognize that no valid answer exists."
+                    data-zh="核心思想：探究多模态大模型能否识别出「不存在有效答案」。">
+          Core idea: probing whether MLLMs can recognize that no valid answer exists.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="Across models and benchmarks, MLLMs <strong>overwhelmingly select plausible distractors</strong> rather than detecting the absent answer. The failure is <strong>more pronounced in temporal reasoning</strong> tasks and <strong>worsens with denser frame sampling</strong>. Chain-of-thought prompting substantially improves detection rates but performance remains unsatisfactory — indicating that prompting alone is insufficient, and that multimodal systems need <strong>explicit detection mechanisms</strong>."
+           data-zh="在各类模型与基准上，多模态大模型<strong>绝大多数情况下会选择看似合理的干扰项</strong>，而非识别出答案缺失。该问题在<strong>时序推理</strong>任务中更为突出，并<strong>随帧采样密度增大而加剧</strong>。思维链提示虽显著提升了检测率，但性能仍不理想——说明仅靠提示不足以解决问题，多模态系统需要<strong>显式的检测机制</strong>。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="mllm_performance.png" alt="MLLM performance on absent answer detection">
+        <figcaption data-en="MLLM performance across settings and benchmarks."
+                    data-zh="多模态大模型在不同设定与基准上的表现。">
+          MLLM performance across settings and benchmarks.</figcaption>
+      </figure>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>Training-Free Long Video Understanding (Survey) — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges"
+          data-zh="面向免训练长视频理解：方法、基准与开放挑战（综述）">
+        Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges</h3>
+
+      <p class="pub-venue">
+        <em data-en="Survey Article &nbsp;·&nbsp; Published in Springer"
+            data-zh="综述文章 &nbsp;·&nbsp; 发表于 Springer">Survey Article &nbsp;·&nbsp; Published in Springer</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://link.springer.com/article/10.1007/s44336-025-00017-w" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Long-form video understanding is costly to train for and data-hungry. Leveraging powerful pretrained multimodal models in a <strong>training-free</strong> manner is an appealing alternative, but the relevant methods and benchmarks are scattered and hard to compare. This survey aims to organize the landscape and clarify where the field stands."
+           data-zh="长视频理解的训练成本高、数据需求大。以<strong>免训练</strong>的方式利用强大的预训练多模态模型是一个颇具吸引力的替代方案，但相关方法与基准分散、难以比较。本综述旨在梳理该领域全貌，厘清研究现状。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method (Survey Scope)" data-zh="方法（综述范围）">Method (Survey Scope)</h5>
+        <p data-en="I searched and analyzed a broad set of papers on video-understanding benchmarks and training-free approaches, <strong>categorizing methods</strong> and compiling statistics on each benchmark's <strong>focus and data scale</strong>. The survey structures training-free long-video understanding into coherent method families and situates existing benchmarks along their evaluation targets."
+           data-zh="我检索并分析了大量关于视频理解基准与免训练方法的论文，对<strong>方法进行归类</strong>，并统计了各基准的<strong>侧重点与数据规模</strong>。综述将免训练长视频理解梳理为若干连贯的方法族，并按评估目标定位现有基准。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="survey.png" alt="Training-free long video understanding survey overview">
+        <figcaption data-en="Overview of methods and benchmarks for training-free long-video understanding."
+                    data-zh="免训练长视频理解的方法与基准概览。">
+          Overview of methods and benchmarks for training-free long-video understanding.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Takeaways" data-zh="主要结论">Main Takeaways</h5>
+        <p data-en="The survey highlights the key open challenges in long-form video understanding — including efficient evidence localization, memory and context handling, and evaluation gaps — and points to promising directions for future training-free systems."
+           data-zh="综述指出了长视频理解中的关键开放挑战——包括高效证据定位、记忆与上下文处理，以及评估缺口——并指明了未来免训练系统的若干有前景的方向。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

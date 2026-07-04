@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>Evidential Keyframe Sampling — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding"
+          data-zh="面向多模态大模型长视频理解的查询条件化证据关键帧采样">
+        Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</h3>
+
+      <p class="pub-authors">
+        <strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu,
+        Jingyang Zhang, Hai "Helen" Li, Yiran Chen
+      </p>
+      <p class="pub-venue">
+        <em data-en="Under Review, 2026 &nbsp;·&nbsp; CEI Lab, Duke University"
+            data-zh="在审，2026 &nbsp;·&nbsp; 杜克大学 CEI 实验室">Under Review, 2026 &nbsp;·&nbsp; CEI Lab, Duke University</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://arxiv.org/abs/2604.01002" target="_blank" rel="noopener" data-en="arXiv" data-zh="arXiv">arXiv</a>]
+        [<a href="https://cei.pratt.duke.edu/" target="_blank" rel="noopener" data-en="Lab" data-zh="实验室">Lab</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="MLLMs perform strongly on video question answering, but applying them to <strong>long-form videos</strong> is constrained by limited context length and computational cost, making <strong>keyframe sampling</strong> essential. Existing approaches rely on semantic relevance or reinforcement learning — the former fails to capture <strong>evidential clues</strong>, while the latter suffers from inefficient combinatorial optimization."
+           data-zh="多模态大模型（MLLMs）在视频问答上表现出色，但将其应用于<strong>长视频</strong>时受限于有限的上下文长度与计算开销，因此<strong>关键帧采样</strong>至关重要。现有方法依赖语义相关性或强化学习——前者难以捕捉<strong>证据性线索</strong>，后者则受制于低效的组合优化。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
+        <p data-en="We propose an evidence-driven keyframe sampling framework grounded in <strong>information bottleneck theory</strong>. Keyframe selection is formulated as maximizing the <strong>conditional mutual information</strong> between selected frames and the query — a principled objective reflecting each frame's contribution to answering. To make it tractable, we exploit its structure to derive a <strong>decomposed optimization</strong> that reduces subset selection to independent frame-level scoring, and introduce a <strong>query-conditioned evidence scoring network</strong> trained with a contrastive objective to estimate evidential importance efficiently."
+           data-zh="我们提出一个基于<strong>信息瓶颈理论</strong>的证据驱动关键帧采样框架。将关键帧选择建模为最大化所选帧与查询之间的<strong>条件互信息</strong>——这一有理论依据的目标反映了每一帧对回答问题的贡献。为使其可解，我们利用其结构推导出一种<strong>分解式优化</strong>，将子集选择化简为独立的帧级打分，并引入一个以对比目标训练的<strong>查询条件化证据打分网络</strong>，以高效估计证据重要性。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="method.png" alt="Query-conditioned evidential keyframe sampling — method overview">
+        <figcaption data-en="Method overview: evidence-driven keyframe selection grounded in information bottleneck theory."
+                    data-zh="方法概览：基于信息瓶颈理论的证据驱动关键帧选择。">
+          Method overview: evidence-driven keyframe selection grounded in information bottleneck theory.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="On long-form video understanding benchmarks, our method <strong>consistently outperforms prior sampling strategies under strict token budgets</strong>, while <strong>significantly improving training efficiency</strong>."
+           data-zh="在长视频理解基准上，我们的方法在<strong>严格的 token 预算下持续优于以往的采样策略</strong>，同时<strong>显著提升了训练效率</strong>。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

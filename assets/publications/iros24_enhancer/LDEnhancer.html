@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enhancing Nighttime UAV Tracking with Light Distribution Suppression (LDEnhancer)">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>LDEnhancer — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Enhancing Nighttime UAV Tracking with Light Distribution Suppression"
+          data-zh="基于光分布抑制的夜间无人机跟踪增强方法">
+        Enhancing Nighttime UAV Tracking with Light Distribution Suppression</h3>
+
+      <p class="pub-authors">
+        Liangliang Yao, Changhong Fu*, <strong>Yiheng Wang</strong>, Haobo Zuo, Kunhan Lu
+      </p>
+      <p class="pub-venue">
+        <em data-en="IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024) &nbsp;·&nbsp; V4R Lab, Tongji University"
+            data-zh="IEEE/RSJ 智能机器人与系统国际会议（IROS 2024） &nbsp;·&nbsp; 同济大学 V4R 实验室">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024) &nbsp;·&nbsp; V4R Lab, Tongji University</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://arxiv.org/pdf/2409.16631" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+        [<a href="https://github.com/vision4robotics/LDEnhancer" target="_blank" rel="noopener" data-en="Code" data-zh="代码">Code</a>]
+        [<a href="https://vision4robotics.github.io/" target="_blank" rel="noopener" data-en="V4R Lab" data-zh="V4R 实验室">V4R Lab</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Visual object tracking enables many intelligent UAV applications, but nighttime flights remain difficult. State-of-the-art low-light enhancers for nighttime UAV tracking typically neglect the <strong>uneven light distribution</strong> in low-light images, which causes excessive enhancement under complex illumination (e.g., glare and localized light sources) and ultimately degrades tracking."
+           data-zh="视觉目标跟踪支撑了众多无人机智能应用，但夜间飞行仍然困难。面向夜间无人机跟踪的先进低照度增强器通常忽略了低光图像中的<strong>不均匀光分布</strong>，在复杂光照（如眩光与局部光源）下导致过度增强，最终使跟踪性能下降。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
+        <p data-en="We propose <strong>LDEnhancer</strong>. An image content refinement module separates <strong>light distribution</strong> from image content in feature space; a light distribution generation module together with an <strong>interweave iteration adjustment</strong> performs pixel-wise adjustment that suppresses uneven illumination while preserving content. We further build <strong>NAT2024-2</strong>, a challenging dataset of 40 sequences with over 74,000 frames exhibiting uneven lighting."
+           data-zh="我们提出 <strong>LDEnhancer</strong>。图像内容精炼模块在特征空间中将<strong>光分布</strong>与图像内容分离；光分布生成模块结合<strong>交织迭代调整</strong>进行逐像素调整，在抑制不均匀光照的同时保留图像内容。我们进一步构建了 <strong>NAT2024-2</strong>——一个包含 40 个序列、超过 74,000 帧、具有不均匀光照的挑战性数据集。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="LDEnhancer workflow.png" alt="LDEnhancer workflow">
+        <figcaption data-en="LDEnhancer workflow: separating and suppressing uneven light distribution before tracking."
+                    data-zh="LDEnhancer 工作流程：在跟踪前分离并抑制不均匀光分布。">
+          LDEnhancer workflow: separating and suppressing uneven light distribution before tracking.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="Experiments on authoritative UAV tracking benchmarks and real-world tests on <strong>NVIDIA Orin NX</strong> confirm that LDEnhancer improves nighttime tracking under uneven illumination while remaining practical for onboard deployment."
+           data-zh="在权威无人机跟踪基准上的实验，以及在 <strong>NVIDIA Orin NX</strong> 上的真实世界测试，均验证了 LDEnhancer 能在不均匀光照下提升夜间跟踪性能，同时保持机载部署的实用性。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

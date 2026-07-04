@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking (TDA-Track)">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>TDA-Track — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking"
+          data-zh="用于夜间无人机跟踪的提示驱动时序域自适应">
+        Prompt-Driven Temporal Domain Adaptation for Nighttime UAV Tracking</h3>
+
+      <p class="pub-authors">
+        Changhong Fu*, <strong>Yiheng Wang</strong>, Liangliang Yao, Guangze Zheng, Haobo Zuo, Jia Pan
+      </p>
+      <p class="pub-venue">
+        <em data-en="IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024) &nbsp;·&nbsp; V4R Lab, Tongji University"
+            data-zh="IEEE/RSJ 智能机器人与系统国际会议（IROS 2024） &nbsp;·&nbsp; 同济大学 V4R 实验室">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024) &nbsp;·&nbsp; V4R Lab, Tongji University</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://arxiv.org/pdf/2409.18533" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+        [<a href="https://github.com/vision4robotics/TDA-Track" target="_blank" rel="noopener" data-en="Code" data-zh="代码">Code</a>]
+        [<a href="https://vision4robotics.github.io/" target="_blank" rel="noopener" data-en="V4R Lab" data-zh="V4R 实验室">V4R Lab</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Nighttime UAV tracking under low illumination has progressed largely through domain adaptation (DA). However, prior DA-based trackers focus on aligning spatial appearance and overlook the discrepancy of <strong>temporal contexts</strong> between the daytime (source) and nighttime (target) domains. Since temporal cues are essential for stable tracking across frames, this gap limits robustness in real nighttime flights."
+           data-zh="低照度下的夜间无人机跟踪主要通过域自适应（DA）取得进展。然而，以往基于 DA 的跟踪器侧重对齐空间外观，忽略了白天（源域）与夜间（目标域）之间<strong>时序上下文</strong>的差异。由于时序线索对跨帧稳定跟踪至关重要，这一缺口限制了真实夜间飞行中的鲁棒性。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
+        <p data-en="We propose <strong>TDA</strong>, which aligns the temporal-context distributions across domains. A temporal feature generator is trained adversarially against a <strong>temporal-consistent discriminator</strong> to extract domain-shared temporal features. To enable training without nighttime annotations, a <strong>prompt-driven object miner</strong> locates targets in unannotated nighttime videos. We also build a new benchmark for long-term nighttime UAV tracking."
+           data-zh="我们提出 <strong>TDA</strong>，用于对齐跨域的时序上下文分布。时序特征生成器与<strong>时序一致性判别器</strong>进行对抗训练，以提取域共享的时序特征。为在无夜间标注的情况下完成训练，<strong>提示驱动的目标挖掘器</strong>在无标注夜间视频中定位目标。我们还构建了一个面向长时夜间无人机跟踪的新基准。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="TDA workflow.png" alt="TDA-Track workflow">
+        <figcaption data-en="TDA-Track workflow: temporal domain adaptation with a prompt-driven object miner."
+                    data-zh="TDA-Track 工作流程：结合提示驱动目标挖掘器的时序域自适应。">
+          TDA-Track workflow: temporal domain adaptation with a prompt-driven object miner.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="TDA-Track improves temporal robustness and performs effectively on public nighttime UAV tracking benchmarks as well as in real-world nighttime scenarios. Code and demonstration videos are released on GitHub."
+           data-zh="TDA-Track 提升了时序鲁棒性，在公开夜间无人机跟踪基准以及真实夜间场景中均表现有效。代码与演示视频已在 GitHub 发布。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

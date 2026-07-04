@@ -38,6 +38,18 @@
     .social-icons a i { font-size: 1.1rem; vertical-align: middle; margin-right: 0.3rem; }
     .social-icons a:hover { color: #111; }
 
+    /* News 状态标签 */
+    ul.news-list li:before { content: ""; margin-right: 0; }
+    .news-badge { display: inline-block; padding: 0.1em 0.55em; border-radius: 3px; font-size: 0.72rem; font-weight: 600; margin-right: 0.45rem; vertical-align: middle; white-space: nowrap; }
+    .badge-accepted { background: #d4edda; color: #155724; }
+    .badge-review   { background: #fff3cd; color: #856404; }
+    .badge-intern   { background: #cce5ff; color: #004085; }
+    .badge-research { background: #d1ecf1; color: #0c5460; }
+    .badge-edu      { background: #e2e3e5; color: #383d41; }
+
+    /* News 列表行距 */
+    #News ul li { margin-bottom: 0.55rem; }
+
     /* 无图片的论文条目 */
     .pub-entry { padding: 0.4rem 0.5rem 0.4rem 1rem; border-left: 3px solid #dee2e6; margin-bottom: 0.8rem; }
     .pub-entry h6 { margin-bottom: 0.2rem; }
@@ -145,38 +157,35 @@
         </div>
 
         <ul>
-          <li data-en="(2026/06) Our work <a href='https://arxiv.org/abs/2606.08239' target='_blank' rel='noopener'><strong>Absent Answer Detection for MLLMs in Video Understanding</strong></a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, is under review."
-              data-zh="(2026/06) 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>的工作：<a href='https://arxiv.org/abs/2606.08239' target='_blank' rel='noopener'><strong>When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</strong></a> 在审中。">
+          <li data-en="<strong>[2026/06]</strong> Our work <a href='https://arxiv.org/abs/2606.08239' target='_blank' rel='noopener'><strong>Absent Answer Detection for MLLMs in Video Understanding</strong></a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, is under review."
+              data-zh="<strong>[2026/06]</strong> 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>的工作：<a href='https://arxiv.org/abs/2606.08239' target='_blank' rel='noopener'><strong>When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</strong></a> 在审中。">
           </li>
-          <li data-en="(2026/05) I'm serving as <strong>MLE Intern at Tiktok</strong>."
-              data-zh="(2026/05) 我在 <strong>TikTok</strong>担任 <strong>MLE实习生</strong>">
+          <li data-en="<strong>[2026/05]</strong> <strong>MLE Intern at TikTok</strong>."
+              data-zh="<strong>[2026/05]</strong> 我在 <strong>TikTok</strong> 担任 <strong>MLE 实习生</strong>。">
           </li>
-          <li data-en="(2026/04) Our work <a href='https://arxiv.org/abs/2604.01002' target='_blank' rel='noopener'><strong>Evidential Keyframe Sampling</strong></a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, is under review."
-              data-zh="(2026/04) 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>的工作：<a href='https://arxiv.org/abs/2604.01002' target='_blank' rel='noopener'><strong>Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</strong></a> 在审中。">
+          <li data-en="<strong>[2026/04]</strong> Our work <a href='https://arxiv.org/abs/2604.01002' target='_blank' rel='noopener'><strong>Evidential Keyframe Sampling</strong></a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, is under review."
+              data-zh="<strong>[2026/04]</strong> 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>的工作：<a href='https://arxiv.org/abs/2604.01002' target='_blank' rel='noopener'><strong>Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</strong></a> 在审中。">
           </li>
-          <li data-en="(2026/03) Our work <a href='https://arxiv.org/abs/2603.19628' target='_blank' rel='noopener'><strong>DPTracker</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University has been accepted by <strong>ICRA 2026</strong>!"
-              data-zh="(2026/03) 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作：<a href='https://arxiv.org/abs/2603.19628' target='_blank' rel='noopener'><strong>Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</strong></a> 被 <strong>ICRA 2026</strong> 接收！">
+          <li data-en="<strong>[2026/03]</strong> Our work <a href='https://arxiv.org/abs/2603.19628' target='_blank' rel='noopener'><strong>DPTracker</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, has been accepted by <strong>ICRA 2026</strong>!"
+              data-zh="<strong>[2026/03]</strong> 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作：<a href='https://arxiv.org/abs/2603.19628' target='_blank' rel='noopener'><strong>Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</strong></a> 被 <strong>ICRA 2026</strong> 接收！">
           </li>
-          <li data-en="(2025/10) I'm working with <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Prof. Yiran Chen</a>, <a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Prof. Hai &quot;Helen&quot; Li</a>, and <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>Yueqian Lin</a>,at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, to conduct research in multimodal language models and video understanding."
-              data-zh="(2025/10) 我在 <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Yiran Chen</a> 和 <a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Hai &quot;Helen&quot; Li</a> 教授的实验室，和 <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>林阅千</a>博士生一起，进行多模态大模型与视频理解的研究。">
+          <li data-en="<strong>[2025/10]</strong> I'm working with <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Prof. Yiran Chen</a>, <a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Prof. Hai &quot;Helen&quot; Li</a>, and <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>Yueqian Lin</a> at <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI Lab</a>, Duke University, on multimodal language models and video understanding."
+              data-zh="<strong>[2025/10]</strong> 在杜克大学 <a href='https://cei.pratt.duke.edu/' target='_blank' rel='noopener'>CEI 实验室</a>，跟随 <a href='https://ece.duke.edu/people/yiran-chen/' target='_blank' rel='noopener'>Yiran Chen</a>、<a href='https://ece.duke.edu/people/hai-helen-li/' target='_blank' rel='noopener'>Hai &quot;Helen&quot; Li</a> 教授及 <a href='https://yueqianlin.com/' target='_blank' rel='noopener'>林阅千</a>博士生，从事多模态大模型与视频理解研究。">
           </li>
-          <li data-en="(2025/08) I'm pursuing <strong> M.S. in Electrical and Computer Engineering at Duke University, US</strong>. Welcome to contact me!"
-              data-zh="(2025/08) 我在 <strong>杜克大学 </strong>攻读 <strong>电气与计算机工程硕士学位 </strong>。欢迎联系我！">
+          <li data-en="<strong>[2025/08]</strong> <strong>M.S. in Electrical &amp; Computer Engineering at Duke University</strong>."
+              data-zh="<strong>[2025/08]</strong> 开始在 <strong>杜克大学</strong>攻读<strong>电气与计算机工程硕士</strong>。">
           </li>
-          <li data-en="(2025/03) I served as <strong>MLE Intern at TeleAI</strong>. I worked with Dr. <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>Xiangyu Chen</a> to build an agent with food recognition and nutrition analysis capability for AI glasses."
-              data-zh="(2025/03) 我在 <strong>中国电信人工智能研究院</strong>担任 <strong>多模态大模型实习生</strong>，在 <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>陈祥宇</a>博士带领下为可穿戴 AI 眼镜构建具备食物识别与营养分析能力的智能 Agent。">
+          <li data-en="<strong>[2025/03]</strong> <strong>MLE Intern at TeleAI</strong>. Worked with <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>Dr. Xiangyu Chen</a> to build a food recognition &amp; nutrition analysis agent for AI glasses."
+              data-zh="<strong>[2025/03]</strong> 在 <strong>中国电信人工智能研究院</strong>担任多模态大模型实习生，跟随 <a href='https://chxy95.github.io/' target='_blank' rel='noopener'>陈祥宇</a>博士为可穿戴 AI 眼镜构建食物识别与营养分析 Agent。">
           </li>
-
-          <li data-en="(2024/07) I served as <strong>Research Assistant Intern</strong> at Shanghai Aopeng Interactive Information Technology Co., working with Prof. <a href='https://shawnshenjx.github.io/' target='_blank' rel='noopener'>Shawn Shen</a> on video-memory agents."
-              data-zh="(2024/07) 我在上海奥鹏信息技术有限公司担任研究助理实习生，与 <a href='https://shawnshenjx.github.io/' target='_blank' rel='noopener'>沈俊潇</a>教授合作，开发具备长视频记忆能力的视频理解 Agent。">
+          <li data-en="<strong>[2024/07]</strong> <strong>RA Intern at Shanghai Aopeng</strong>. Worked with <a href='https://shawnshenjx.github.io/' target='_blank' rel='noopener'>Prof. Shawn Shen</a> on video-memory system."
+              data-zh="<strong>[2024/07]</strong> 在<strong>上海奥鹏信息技术有限公司</strong>担任研究助理实习生，与 <a href='https://shawnshenjx.github.io/' target='_blank' rel='noopener'>沈俊潇</a>教授合作开发视频记忆系统。">
           </li>
-
-          <li data-en="(2024/06) Our work <a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'><strong>TDA-Track</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, was accepted by <strong>IROS 2024</strong>! [<a href='https://arxiv.org/pdf/2409.18533' target='_blank' rel='noopener'>Paper</a>] [<a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'>Code</a>]"
-              data-zh="(2024/06) 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作 <a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'><strong>TDA-Track</strong></a> 被 <strong>IROS 2024</strong> 接收！[<a href='https://arxiv.org/pdf/2409.18533' target='_blank' rel='noopener'>论文</a>] [<a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'>代码</a>]">
+          <li data-en="<strong>[2024/06]</strong> <a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'><strong>TDA-Track</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, accepted by <strong>IROS 2024</strong>. [<a href='https://arxiv.org/pdf/2409.18533' target='_blank' rel='noopener'>Paper</a>] [<a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'>Code</a>]"
+              data-zh="<strong>[2024/06]</strong> 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作 <a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'><strong>TDA-Track</strong></a> 被 <strong>IROS 2024</strong> 接收。[<a href='https://arxiv.org/pdf/2409.18533' target='_blank' rel='noopener'>论文</a>] [<a href='https://github.com/vision4robotics/TDA-Track' target='_blank' rel='noopener'>代码</a>]">
           </li>
-
-          <li data-en="(2024/06) Our work <a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'><strong>LDEnhancer</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, was accepted by <strong>IROS 2024</strong>! [<a href='https://arxiv.org/pdf/2409.16631' target='_blank' rel='noopener'>Paper</a>] [<a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'>Code</a>]"
-              data-zh="(2024/06) 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作 <a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'><strong>LDEnhancer</strong></a> 被 <strong>IROS 2024</strong> 接收！[<a href='https://arxiv.org/pdf/2409.16631' target='_blank' rel='noopener'>论文</a>] [<a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'>代码</a>]">
+          <li data-en="<strong>[2024/06]</strong> <a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'><strong>LDEnhancer</strong></a> at <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R Lab</a>, Tongji University, accepted by <strong>IROS 2024</strong>. [<a href='https://arxiv.org/pdf/2409.16631' target='_blank' rel='noopener'>Paper</a>] [<a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'>Code</a>]"
+              data-zh="<strong>[2024/06]</strong> 在同济大学 <a href='https://vision4robotics.github.io/' target='_blank' rel='noopener'>V4R 实验室</a>的工作 <a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'><strong>LDEnhancer</strong></a> 被 <strong>IROS 2024</strong> 接收。[<a href='https://arxiv.org/pdf/2409.16631' target='_blank' rel='noopener'>论文</a>] [<a href='https://github.com/vision4robotics/LDEnhancer' target='_blank' rel='noopener'>代码</a>]">
           </li>
         </ul>
       </div>
@@ -184,52 +193,61 @@
       <section id="Projects" class="row marketing" aria-labelledby="projects-heading">
         <div class="row" style="width:100%">
           <div class="col-lg-12">
-            <h4 id="projects-heading" data-en="📁 Publications &amp; Projects" data-zh="📁 论文与项目">📁 Publications &amp; Projects</h4>
+            <h4 id="projects-heading" data-en="Research &amp; Publications" data-zh="研究经历"></h4>
             <hr>
           </div>
         </div>
 
-        <!-- Quick nav -->
-        <div class="row mb-3">
-          <div class="col-lg-12">
-            <div class="btn-group" role="group" style="margin-bottom:0.5rem;">
-              <a class="btn btn-sm btn-outline-secondary" href="#proj-video" data-en="Multimodal LLM in Video" data-zh="视频多模态大模型">Multimodal LLM in Video</a>
-              <a class="btn btn-sm btn-outline-secondary" href="#proj-nutrition" data-en="Nutrition Analysis Agent" data-zh="营养分析 Agent">Nutrition Analysis Agent</a>
-              <a class="btn btn-sm btn-outline-secondary" href="#proj-uav" data-en="Nighttime UAV Tracking" data-zh="夜间无人机跟踪">Nighttime UAV Tracking</a>
-            </div>
-          </div>
-        </div>
-      
         <!-- ===== 1. Multimodal LLM in Video Understanding ===== -->
         <section id="proj-video" class="mb-5">
           <h5 data-en="🎬 Multimodal LLM in Video Understanding" data-zh="🎬 视频多模态大模型">🎬 Multimodal LLM in Video Understanding</h5>
 
-          <div class="pub-entry">
-            <h6><a href="https://arxiv.org/abs/2606.08239" target="_blank" rel="noopener"
-                   data-en="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding"
-                   data-zh="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding">
-                When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</a></h6>
-            <p style="margin:0; font-size:0.88rem;">
-              <span data-en="<strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai &quot;Helen&quot; Li, Yiran Chen"
-                    data-zh="<strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai &quot;Helen&quot; Li, Yiran Chen">
-                <strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai "Helen" Li, Yiran Chen</span><br>
-              <em data-en="Under Review, 2026" data-zh="在审，2026">Under Review, 2026</em>
-              &nbsp;[<a href="https://arxiv.org/abs/2606.08239" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
-            </p>
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/publications/emnlp26_mllm_diagnose/mllm_diagnose.html" target="_blank" rel="noopener">
+                <img src="assets/publications/emnlp26_mllm_diagnose/idea.png" alt="Absent Answer Detection" class="img-thumbnail" style="width:100%;max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h6><a href="assets/publications/emnlp26_mllm_diagnose/mllm_diagnose.html" target="_blank" rel="noopener"
+                     data-en="When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding"
+                     data-zh="当没有正确答案时：诊断多模态大模型在视频理解中的缺失答案检测能力">
+                  When No Answer Is Correct: Diagnosing Absent Answer Detection for MLLMs in Video Understanding</a></h6>
+              <p style="font-size:0.88rem;">
+                <span data-en="<strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai &quot;Helen&quot; Li, Yiran Chen"
+                      data-zh="<strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai &quot;Helen&quot; Li, Yiran Chen">
+                  <strong>Yiheng Wang</strong>, Yueqian Lin, Lichen Zhu, Yudong Liu, Hai "Helen" Li, Yiran Chen</span><br>
+                <em data-en="Under Review, 2026" data-zh="在审，2026">Under Review, 2026</em>
+              </p>
+              <p>
+                [<a href="assets/publications/emnlp26_mllm_diagnose/mllm_diagnose.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
+                [<a href="https://arxiv.org/abs/2606.08239" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+              </p>
+            </div>
           </div>
 
-          <div class="pub-entry">
-            <h6><a href="https://arxiv.org/abs/2604.01002" target="_blank" rel="noopener"
-                   data-en="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding"
-                   data-zh="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding">
-                Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</a></h6>
-            <p style="margin:0; font-size:0.88rem;">
-              <span data-en="<strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai &quot;Helen&quot; Li, Yiran Chen"
-                    data-zh="<strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai &quot;Helen&quot; Li, Yiran Chen">
-                <strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai "Helen" Li, Yiran Chen</span><br>
-              <em data-en="Under Review, 2026" data-zh="在审，2026">Under Review, 2026</em>
-              &nbsp;[<a href="https://arxiv.org/abs/2604.01002" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
-            </p>
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/publications/colm26_frame_selector/frame_selector.html" target="_blank" rel="noopener">
+                <img src="assets/publications/colm26_frame_selector/method.png" alt="Evidential Keyframe Sampling" class="img-thumbnail" style="width:100%;max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h6><a href="assets/publications/colm26_frame_selector/frame_selector.html" target="_blank" rel="noopener"
+                     data-en="Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding"
+                     data-zh="面向多模态大模型长视频理解的查询条件化证据关键帧采样">
+                  Query-Conditioned Evidential Keyframe Sampling for MLLM-Based Long-Form Video Understanding</a></h6>
+              <p style="font-size:0.88rem;">
+                <span data-en="<strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai &quot;Helen&quot; Li, Yiran Chen"
+                      data-zh="<strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai &quot;Helen&quot; Li, Yiran Chen">
+                  <strong>Yiheng Wang</strong>, Lichen Zhu, Yueqian Lin, Yudong Liu, Jingyang Zhang, Hai "Helen" Li, Yiran Chen</span><br>
+                <em data-en="Under Review, 2026" data-zh="在审，2026">Under Review, 2026</em>
+              </p>
+              <p>
+                [<a href="assets/publications/colm26_frame_selector/frame_selector.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
+                [<a href="https://arxiv.org/abs/2604.01002" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+              </p>
+            </div>
           </div>
 
           <div class="project-card">
@@ -313,18 +331,28 @@
         <section id="proj-uav" class="mb-5">
           <h5 data-en="🌙 Nighttime UAV Tracking" data-zh="🌙 夜间无人机目标跟踪">🌙 Nighttime UAV Tracking</h5>
 
-          <div class="pub-entry">
-            <h6><a href="https://arxiv.org/abs/2603.19628" target="_blank" rel="noopener"
-                   data-en="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking"
-                   data-zh="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking">
-                Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</a></h6>
-            <p style="margin:0; font-size:0.88rem;">
-              <span data-en="<strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang"
-                    data-zh="<strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang">
-                <strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang</span><br>
-              <em data-en="IEEE International Conference on Robotics and Automation (ICRA 2026)" data-zh="IEEE International Conference on Robotics and Automation (ICRA 2026)">ICRA 2026</em>
-              &nbsp;[<a href="https://arxiv.org/abs/2603.19628" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
-            </p>
+          <div class="project-card">
+            <div class="project-thumb">
+              <a href="assets/publications/icra26_dptrack/dptracker.html" target="_blank" rel="noopener">
+                <img src="assets/publications/icra26_dptrack/dptracker.png" alt="DPTracker" class="img-thumbnail" style="width:100%;max-height:200px;">
+              </a>
+            </div>
+            <div class="project-info">
+              <h6><a href="assets/publications/icra26_dptrack/dptracker.html" target="_blank" rel="noopener"
+                     data-en="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking"
+                     data-zh="用于夜间无人机跟踪的双提示驱动特征编码">
+                  Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</a></h6>
+              <p style="font-size:0.88rem;">
+                <span data-en="<strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang"
+                      data-zh="<strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang">
+                  <strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang</span><br>
+                <em>ICRA 2026</em>
+              </p>
+              <p>
+                [<a href="assets/publications/icra26_dptrack/dptracker.html" target="_blank" rel="noopener" data-en="Details" data-zh="详情">Details</a>]
+                [<a href="https://arxiv.org/abs/2603.19628" target="_blank" rel="noopener" data-en="Paper" data-zh="论文">Paper</a>]
+              </p>
+            </div>
           </div>
 
           <div class="project-card">

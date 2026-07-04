@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Food Recognition & Nutrition Estimation Agent for Wearable AI Glasses">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>Food &amp; Nutrition Agent — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Food Recognition &amp; Nutrition Estimation Agent for Wearable AI Glasses"
+          data-zh="面向可穿戴 AI 眼镜的食物识别与营养估算 Agent">
+        Food Recognition &amp; Nutrition Estimation Agent for Wearable AI Glasses</h3>
+
+      <p class="pub-venue">
+        <em data-en="Machine Learning Engineer Intern, 2025 &nbsp;·&nbsp; TeleAI, China Telecom &nbsp;·&nbsp; with Dr. Xiangyu Chen"
+            data-zh="机器学习工程实习生，2025 &nbsp;·&nbsp; 中国电信人工智能研究院（TeleAI） &nbsp;·&nbsp; 导师：陈祥宇博士">Machine Learning Engineer Intern, 2025 &nbsp;·&nbsp; TeleAI, China Telecom &nbsp;·&nbsp; with Dr. Xiangyu Chen</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://chxy95.github.io/" target="_blank" rel="noopener" data-en="Advisor" data-zh="导师主页">Advisor</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Wearable AI glasses aim to give users on-the-go dietary assistance, but this requires <strong>fine-grained food recognition</strong> and reliable <strong>nutrition estimation</strong> from a single egocentric photo. General-purpose multimodal models underperform on the long-tailed, visually similar categories typical of real meals, so a domain-adapted model and a clean data pipeline are needed."
+           data-zh="可穿戴 AI 眼镜希望为用户提供随时随地的饮食辅助，但这需要从单张第一视角照片中实现<strong>细粒度食物识别</strong>与可靠的<strong>营养估算</strong>。通用多模态模型在真实餐食中常见的长尾、视觉相似类别上表现不佳，因此需要一个域适配的模型和干净的数据流水线。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method &amp; My Role" data-zh="方法与我的职责">Method &amp; My Role</h5>
+        <p data-en="As the <strong>core data engineer and algorithm developer</strong>, I collected large-scale food data from Baidu and official nutrition databases, and built a complete preprocessing pipeline — <strong>image-quality filtering, object detection, cropping, and deduplication</strong>. I then constructed the fine-tuning datasets and fine-tuned <strong>TeleMM-7B</strong> for food recognition and nutrition estimation, integrating it into the glasses' agent."
+           data-zh="作为<strong>核心数据工程师与算法开发者</strong>，我从百度与官方营养数据库收集了大规模食物数据，并构建了完整的预处理流水线——<strong>图像质量筛选、目标检测、裁剪与去重</strong>。随后我构建了微调数据集，并对 <strong>TeleMM-7B</strong> 进行微调以完成食物识别与营养估算，并将其集成进眼镜的智能 Agent。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="teleglass.jpg" alt="Food recognition and nutrition estimation agent">
+        <figcaption data-en="Food recognition &amp; nutrition estimation agent for wearable AI glasses."
+                    data-zh="面向可穿戴 AI 眼镜的食物识别与营养估算 Agent。">
+          Food recognition &amp; nutrition estimation agent for wearable AI glasses.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="The fine-tuned model improved food recognition accuracy from <strong>74% to 95%</strong>, delivering practical on-device dietary recognition and nutrition analysis for the wearable AI-glasses agent."
+           data-zh="微调后的模型将食物识别准确率从 <strong>74% 提升至 95%</strong>，为可穿戴 AI 眼镜 Agent 提供了实用的端侧饮食识别与营养分析能力。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

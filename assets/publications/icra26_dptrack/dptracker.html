@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>DPTracker — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking"
+          data-zh="用于夜间无人机跟踪的双提示驱动特征编码">
+        Dual Prompt-Driven Feature Encoding for Nighttime UAV Tracking</h3>
+
+      <p class="pub-authors">
+        <strong>Yiheng Wang</strong>, Changhong Fu, Liangliang Yao, Haobo Zuo, Zijie Zhang
+      </p>
+      <p class="pub-venue">
+        <em data-en="IEEE International Conference on Robotics and Automation (ICRA 2026) &nbsp;·&nbsp; V4R Lab, Tongji University"
+            data-zh="IEEE 机器人与自动化国际会议（ICRA 2026） &nbsp;·&nbsp; 同济大学 V4R 实验室">IEEE International Conference on Robotics and Automation (ICRA 2026) &nbsp;·&nbsp; V4R Lab, Tongji University</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://arxiv.org/abs/2603.19628" target="_blank" rel="noopener" data-en="arXiv" data-zh="arXiv">arXiv</a>]
+        [<a href="https://vision4robotics.github.io/" target="_blank" rel="noopener" data-en="V4R Lab" data-zh="V4R 实验室">V4R Lab</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Robust feature encoding is the foundation of UAV tracking, enabling nuanced perception of target appearance and motion. However, existing feature encoding methods often <strong>overlook critical illumination and viewpoint cues</strong> that are essential for robust perception under challenging nighttime conditions, leading to degraded tracking performance."
+           data-zh="鲁棒的特征编码是无人机跟踪的基础，能够精细地感知目标的外观与运动。然而，现有特征编码方法往往<strong>忽略了关键的光照与视角线索</strong>，而这些线索对于在具有挑战性的夜间条件下实现鲁棒感知至关重要，从而导致跟踪性能下降。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
+        <p data-en="We propose a <strong>dual prompt-driven feature encoding</strong> method that integrates prompt-conditioned adaptation and context-aware prompt evolution for domain-invariant encoding. A <strong>pyramid illumination prompter</strong> extracts multi-scale, frequency-aware illumination cues, while a <strong>dynamic viewpoint prompter</strong> adjusts deformable convolution offsets to accommodate viewpoint variations."
+           data-zh="我们提出一种<strong>双提示驱动的特征编码</strong>方法，融合提示条件化自适应与上下文感知的提示演化，以实现域不变的特征编码。<strong>金字塔光照提示器</strong>提取多尺度、频率感知的光照线索，<strong>动态视角提示器</strong>则调整可变形卷积偏移以适应视角变化。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="dptracker.png" alt="DPTracker — dual prompt-driven feature encoding overview">
+        <figcaption data-en="Dual prompt-driven feature encoding: pyramid illumination prompter and dynamic viewpoint prompter."
+                    data-zh="双提示驱动特征编码：金字塔光照提示器与动态视角提示器。">
+          Dual prompt-driven feature encoding: pyramid illumination prompter and dynamic viewpoint prompter.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="Extensive experiments and real-world tests demonstrate the effectiveness of the proposed tracker under <strong>challenging nighttime scenarios</strong>, validating the benefit of jointly modeling illumination and viewpoint cues for robust feature encoding."
+           data-zh="大量实验与真实世界测试验证了所提跟踪器在<strong>挑战性夜间场景</strong>下的有效性，证明了联合建模光照与视角线索对鲁棒特征编码的益处。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>

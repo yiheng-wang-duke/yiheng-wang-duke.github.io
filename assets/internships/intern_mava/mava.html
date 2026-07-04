@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Memory Augmented Video Agent for Long-Form Video Understanding">
+  <link rel="icon" href="../../../files/icon.svg">
+  <title>Memory Augmented Video Agent — Yiheng Wang</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link href="../../../css/narrow-jumbotron.css" rel="stylesheet">
+
+  <style>
+    .lang-switch { position: absolute; top: 10px; right: 20px; z-index: 2000; }
+    .lang-switch .active { pointer-events: none; opacity: 0.8; }
+    .pub-title { margin-top: 1rem; }
+    .pub-authors { font-size: 0.95rem; }
+    .pub-venue { color: #666; }
+    .pub-links a { margin-right: 0.4rem; }
+    .sec { margin-top: 1.6rem; }
+    .sec-title { border-left: 4px solid #4a6fa5; padding-left: 0.55rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .sec p { text-align: justify; }
+    figure.pub-fig { margin: 1.5rem 0; text-align: center; }
+    figure.pub-fig img { max-width: 100%; border: 1px solid #eee; border-radius: 4px; }
+    figure.pub-fig figcaption { font-size: 0.85rem; color: #777; margin-top: 0.4rem; }
+  </style>
+</head>
+
+<body>
+  <div class="lang-switch">
+    <button id="lang-en" class="btn btn-sm btn-outline-primary">English</button>
+    <button id="lang-zh" class="btn btn-sm btn-outline-secondary">中文</button>
+  </div>
+
+  <div class="container">
+    <main role="main">
+      <p style="margin-top:1.5rem;">
+        <a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a>
+      </p>
+
+      <h3 class="pub-title" data-en="Memory Augmented Video Agent for Long-Form Video Understanding"
+          data-zh="面向长视频理解的记忆增强视频 Agent">
+        Memory Augmented Video Agent for Long-Form Video Understanding</h3>
+
+      <p class="pub-venue">
+        <em data-en="Research Internship, 2024 &nbsp;·&nbsp; with Prof. Shawn Shen, Shanghai Aopeng"
+            data-zh="研究实习项目，2024 &nbsp;·&nbsp; 与沈俊潇教授合作，上海奥鹏">Research Internship, 2024 &nbsp;·&nbsp; with Prof. Shawn Shen, Shanghai Aopeng</em>
+      </p>
+      <p class="pub-links">
+        [<a href="https://shawnshenjx.github.io/" target="_blank" rel="noopener" data-en="Advisor" data-zh="导师主页">Advisor</a>]
+      </p>
+
+      <hr>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
+        <p data-en="Multimodal large language models (MLLMs) perform well on short clips, but long-form video question answering is hindered by <strong>information redundancy</strong> and <strong>inefficient evidence retrieval</strong>: relevant clues are sparse and scattered across thousands of frames, while the model context length is limited. A system is needed that can store and retrieve the right evidence on demand."
+           data-zh="多模态大模型（MLLMs）在短视频片段上表现良好，但长视频问答受制于<strong>信息冗余</strong>与<strong>检索低效</strong>：相关线索稀疏且散布在数千帧之中，而模型上下文长度有限。因此需要一个能够按需存储并检索正确证据的系统。">
+          ...</p>
+      </div>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
+        <p data-en="We build a <strong>retrieval-augmented</strong> long-video QA agent with enhanced <strong>episodic memory retrieval</strong>. The video is mined and indexed into a memory store backed by a <strong>vector database</strong>; given a query, the agent retrieves the most query-relevant episodes and feeds only this compact evidence to the MLLM for inference, reducing redundancy while preserving the clues needed to answer."
+           data-zh="我们构建了一个具备增强<strong>情节记忆检索</strong>的<strong>检索增强</strong>长视频问答 Agent。视频经挖掘并索引进由<strong>向量数据库</strong>支撑的记忆库；给定查询后，Agent 检索与查询最相关的情节片段，仅将这一紧凑证据送入多模态大模型进行推理，从而在保留回答所需线索的同时降低冗余。">
+          ...</p>
+      </div>
+
+      <figure class="pub-fig">
+        <img src="mava_lvbench.png" alt="Memory Augmented Video Agent on LVBench">
+        <figcaption data-en="Retrieval-augmented long-video QA with episodic memory retrieval."
+                    data-zh="结合情节记忆检索的检索增强长视频问答。">
+          Retrieval-augmented long-video QA with episodic memory retrieval.</figcaption>
+      </figure>
+
+      <div class="sec">
+        <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
+        <p data-en="The memory-augmented agent substantially improves long-video QA accuracy on <strong>LVBench, from 33% to 48%</strong>, demonstrating the effectiveness of episodic memory retrieval under strict context budgets."
+           data-zh="该记忆增强 Agent 在 <strong>LVBench 上将长视频问答准确率从 33% 提升至 48%</strong>，验证了在严格上下文预算下情节记忆检索的有效性。">
+          ...</p>
+      </div>
+    </main>
+
+    <footer class="footer" style="margin-top:2rem;">
+      <p><a href="../../../index.html" data-en="&larr; Back to homepage" data-zh="&larr; 返回主页">&larr; Back to homepage</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const transElems = Array.from(document.querySelectorAll('[data-en]'));
+      const btnEn = document.getElementById('lang-en');
+      const btnZh = document.getElementById('lang-zh');
+      function setLanguage(lang) {
+        transElems.forEach(el => {
+          const val = el.getAttribute('data-' + lang);
+          if (val !== null) el.innerHTML = val;
+        });
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        if (lang === 'en') {
+          btnEn.classList.add('active','btn-primary'); btnEn.classList.remove('btn-outline-primary');
+          btnZh.classList.remove('active','btn-primary'); btnZh.classList.add('btn-outline-secondary');
+        } else {
+          btnZh.classList.add('active','btn-primary'); btnZh.classList.remove('btn-outline-secondary');
+          btnEn.classList.remove('active','btn-primary'); btnEn.classList.add('btn-outline-primary');
+        }
+        document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+      }
+      btnEn.addEventListener('click', () => setLanguage('en'));
+      btnZh.addEventListener('click', () => setLanguage('zh'));
+      const saved = (function(){ try { return localStorage.getItem('lang'); } catch (e) { return null; } })();
+      setLanguage(saved || 'en');
+    })();
+  </script>
+</body>
+</html>
