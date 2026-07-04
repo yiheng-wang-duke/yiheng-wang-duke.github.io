@@ -57,29 +57,38 @@
 
       <div class="sec">
         <h5 class="sec-title" data-en="Background &amp; Motivation" data-zh="背景与动机">Background &amp; Motivation</h5>
-        <p data-en="Multimodal large language models (MLLMs) perform well on short clips, but long-form video question answering is hindered by <strong>information redundancy</strong> and <strong>inefficient evidence retrieval</strong>: relevant clues are sparse and scattered across thousands of frames, while the model context length is limited. A system is needed that can store and retrieve the right evidence on demand."
-           data-zh="多模态大模型（MLLMs）在短视频片段上表现良好，但长视频问答受制于<strong>信息冗余</strong>与<strong>检索低效</strong>：相关线索稀疏且散布在数千帧之中，而模型上下文长度有限。因此需要一个能够按需存储并检索正确证据的系统。">
+        <p data-en="Building AI agents that answer questions over extremely long videos requires long-term contextual memory, but Transformer-based models struggle with lengthy inputs because of limited context capacity and quadratic inference cost. Retrieval-based systems help by selecting relevant segments, yet existing approaches have two key limitations. First, they often apply aggressive memory compression that removes similar frames, which disrupts continuous action semantics and loses valuable information. Second, they rely solely on visual features and ignore the rich <strong>episodic information</strong> inside clips, such as objects, relations, and actions, that is essential for accurate retrieval."
+           data-zh="构建能够回答超长视频问题的 AI Agent 需要长期上下文记忆，但基于 Transformer 的模型受限于有限的上下文容量与二次方推理开销，难以处理长输入。基于检索的系统通过挑选相关片段来缓解这一问题，但已有方法存在两个关键局限。其一，它们常采用激进的记忆压缩，直接移除相似帧，破坏了连续的动作语义并丢失有价值的信息。其二，它们仅依赖视觉特征，忽略了片段内部丰富的<strong>情节信息</strong>，例如对象、关系与动作，而这些对准确检索至关重要。">
           ...</p>
       </div>
 
       <div class="sec">
         <h5 class="sec-title" data-en="Method" data-zh="方法">Method</h5>
-        <p data-en="We build a <strong>retrieval-augmented</strong> long-video QA agent with enhanced <strong>episodic memory retrieval</strong>. The video is mined and indexed into a memory store backed by a <strong>vector database</strong>; given a query, the agent retrieves the most query-relevant episodes and feeds only this compact evidence to the MLLM for inference, reducing redundancy while preserving the clues needed to answer."
-           data-zh="我们构建了一个具备增强<strong>情节记忆检索</strong>的<strong>检索增强</strong>长视频问答 Agent。视频经挖掘并索引进由<strong>向量数据库</strong>支撑的记忆库；给定查询后，Agent 检索与查询最相关的情节片段，仅将这一紧凑证据送入多模态大模型进行推理，从而在保留回答所需线索的同时降低冗余。">
+        <p data-en="<strong>MAVA</strong> is a flexible, modular, and <strong>training-free</strong> framework that consolidates and retrieves episodic memory at both the clip level and the frame level. It runs in three main stages."
+           data-zh="<strong>MAVA</strong> 是一个灵活、模块化且<strong>免训练</strong>的框架，在<strong>片段级</strong>与<strong>帧级</strong>同时进行情节记忆的巩固与检索，整体分为三个阶段。">
+          ...</p>
+        <p data-en="&nbsp;&nbsp;<strong>1. Episodic memory consolidation.</strong> The video is first segmented into semantically coherent <strong>action clips</strong> using temporally weighted hierarchical clustering over frame embeddings. Within each clip, an <strong>action-aware consolidation</strong> step iteratively removes the most redundant frames up to a target compression rate, cutting storage and retrieval cost while preserving action continuity. Each consolidated clip is then encoded by a clip-level video encoder."
+           data-zh="&nbsp;&nbsp;<strong>1. 情节记忆巩固。</strong>首先基于帧嵌入，用时序加权层次聚类将视频切分为语义连贯的<strong>动作片段</strong>。在每个片段内，<strong>动作感知巩固</strong>会按目标压缩率迭代移除最冗余的帧，在降低存储与检索成本的同时保留动作连续性。随后每个巩固后的片段由片段级视频编码器编码。">
+          ...</p>
+        <p data-en="&nbsp;&nbsp;<strong>2. Scene-graph-augmented retrieval.</strong> For every clip, MAVA builds a <strong>scene graph</strong>. Frames are captioned with BLIP, REBEL extracts subject-relation-object triplets, and YOLO-World adds spatial relations between entities. The graph is serialized to text and encoded, giving a second, episodic view of the clip alongside its visual embedding."
+           data-zh="&nbsp;&nbsp;<strong>2. 场景图增强检索。</strong>MAVA 为每个片段构建<strong>场景图</strong>。用 BLIP 为帧生成描述，用 REBEL 抽取「主语-关系-宾语」三元组，再用 YOLO-World 补充实体间的空间关系。场景图被序列化为文本并编码，从而在视觉嵌入之外，为片段提供第二个「情节」视角。">
+          ...</p>
+        <p data-en="&nbsp;&nbsp;<strong>3. Fused retrieval and answer generation.</strong> Given a query, MAVA scores each clip by both visual similarity and scene-graph similarity, and fuses the two rankings with <strong>Reciprocal Rank Fusion</strong>. Only the top retrieved clips are passed to the MLLM to generate the final answer."
+           data-zh="&nbsp;&nbsp;<strong>3. 融合检索与答案生成。</strong>给定查询后，MAVA 同时用视觉相似度与场景图相似度对每个片段打分，并用<strong>倒数排名融合（Reciprocal Rank Fusion）</strong>融合两组排名。只有排名靠前的片段会被送入多模态大模型生成最终答案。">
           ...</p>
       </div>
 
       <figure class="pub-fig">
-        <img src="mava_lvbench.png" alt="Memory Augmented Video Agent on LVBench">
-        <figcaption data-en="Retrieval-augmented long-video QA with episodic memory retrieval."
-                    data-zh="结合情节记忆检索的检索增强长视频问答。">
-          Retrieval-augmented long-video QA with episodic memory retrieval.</figcaption>
+        <img src="mava_lvbench.png" alt="MAVA performance on LVBench" style="width:82%;">
+        <figcaption data-en="On LVBench, MAVA reaches higher accuracy while using far fewer frames than large proprietary models."
+                    data-zh="在 LVBench 上，MAVA 以远少于大型闭源模型的帧数取得更高准确率。">
+          On LVBench, MAVA reaches higher accuracy while using far fewer frames than large proprietary models.</figcaption>
       </figure>
 
       <div class="sec">
         <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
-        <p data-en="The memory-augmented agent substantially improves long-video QA accuracy on <strong>LVBench, from 33% to 48%</strong>, demonstrating the effectiveness of episodic memory retrieval under strict context budgets."
-           data-zh="该记忆增强 Agent 在 <strong>LVBench 上将长视频问答准确率从 33% 提升至 48%</strong>，验证了在严格上下文预算下情节记忆检索的有效性。">
+        <p data-en="On <strong>LVBench</strong>, MAVA reaches an average score of <strong>48.9</strong>, well ahead of strong general models such as GPT-4o (30.8) and Gemini 1.5 Pro (33.1), while using only about <strong>35 frames</strong> versus hundreds or thousands for those baselines. It also delivers consistent gains across MLVU tasks, especially on needle-style question answering and relation reasoning. These results show that high-quality <strong>episodic retrieval</strong>, rather than simply a larger context, is central to long-form video understanding."
+           data-zh="在 <strong>LVBench</strong> 上，MAVA 取得 <strong>48.9</strong> 的平均分，明显领先于 GPT-4o（30.8）与 Gemini 1.5 Pro（33.1）等强通用模型，而所用帧数仅约 <strong>35 帧</strong>，远少于这些基线的数百至数千帧。它在 MLVU 的多项任务上也取得稳定提升，尤其是在指针式问答与关系推理上。这些结果表明，高质量的<strong>情节检索</strong>，而非单纯更大的上下文，才是长视频理解的关键。">
           ...</p>
       </div>
     </main>

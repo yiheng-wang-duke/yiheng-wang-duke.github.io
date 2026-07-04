@@ -64,8 +64,11 @@
 
       <div class="sec">
         <h5 class="sec-title" data-en="Method &amp; My Role" data-zh="方法与我的职责">Method &amp; My Role</h5>
-        <p data-en="As the <strong>core data engineer and algorithm developer</strong>, I collected large-scale food data from Baidu and official nutrition databases, and built a complete preprocessing pipeline — <strong>image-quality filtering, object detection, cropping, and deduplication</strong>. I then constructed the fine-tuning datasets and fine-tuned <strong>TeleMM-7B</strong> for food recognition and nutrition estimation, integrating it into the glasses' agent."
-           data-zh="作为<strong>核心数据工程师与算法开发者</strong>，我从百度与官方营养数据库收集了大规模食物数据，并构建了完整的预处理流水线——<strong>图像质量筛选、目标检测、裁剪与去重</strong>。随后我构建了微调数据集，并对 <strong>TeleMM-7B</strong> 进行微调以完成食物识别与营养估算，并将其集成进眼镜的智能 Agent。">
+        <p data-en="As the <strong>core data engineer and algorithm developer</strong>, I built <strong>automated data pipelines</strong> that assembled a large-scale dataset of <strong>2M+ food image and nutrition-description pairs</strong>, drawing from web sources and official nutrition databases. The pipeline handled image-quality filtering, object detection, cropping, and deduplication, keeping the training data clean and balanced across long-tailed food categories."
+           data-zh="作为<strong>核心数据工程师与算法开发者</strong>，我构建了<strong>自动化数据流水线</strong>，从网络来源与官方营养数据库汇聚了 <strong>200 万+ 食物图像与营养描述配对</strong>的大规模数据集。该流水线完成图像质量筛选、目标检测、裁剪与去重，使训练数据在长尾食物类别上保持干净且均衡。">
+          ...</p>
+        <p data-en="I then performed <strong>supervised fine-tuning (SFT)</strong> on a <strong>7B-parameter multimodal LLM (TeleMM-7B)</strong> so that, given a single food image, it estimates the food's <strong>calories and nutritional composition</strong>. The fine-tuned model was integrated into the glasses' on-device agent."
+           data-zh="随后我对一个 <strong>70 亿参数的多模态大模型（TeleMM-7B）</strong>进行<strong>有监督微调（SFT）</strong>，使其能够根据单张食物图像估算该食物的<strong>热量与营养成分</strong>。微调后的模型被集成进眼镜的端侧智能 Agent。">
           ...</p>
       </div>
 
@@ -78,8 +81,8 @@
 
       <div class="sec">
         <h5 class="sec-title" data-en="Main Results" data-zh="主要结果">Main Results</h5>
-        <p data-en="The fine-tuned model improved food recognition accuracy from <strong>74% to 95%</strong>, delivering practical on-device dietary recognition and nutrition analysis for the wearable AI-glasses agent."
-           data-zh="微调后的模型将食物识别准确率从 <strong>74% 提升至 95%</strong>，为可穿戴 AI 眼镜 Agent 提供了实用的端侧饮食识别与营养分析能力。">
+        <p data-en="Supervised fine-tuning improved food recognition accuracy from <strong>74% to 91%</strong> and made the nutritional analysis noticeably more reliable, improving the overall user experience. The product was later <strong>commercially launched</strong>."
+           data-zh="有监督微调将食物识别准确率从 <strong>74% 提升至 91%</strong>，并显著提升了营养分析的可靠性与整体用户体验。该产品后续已<strong>正式商业化落地</strong>。">
           ...</p>
       </div>
     </main>
